@@ -97,27 +97,19 @@
 	dark
 >
 	<div class="z-10 col-span-full md:col-span-1 row-start-1">
-		<h1 class="h1 my-16">Ulrich Becher Digital</h1>
+		<h1 class="h1 my-16">digital Herbarium</h1>
 		<p class="p lg:text-xl">
-			Virtuell zusammengeführte Teilnachlässe des Deutschen Exilarchivs 1933-1945 und des
-			Schweizerischen Literaturarchivs
+			search our collection of dried plants from the botanical garden of the University of Bern
 		</p>
-	</div>
-	<div class="col-start-1 sm:col-start-2 row-span-2 row-start-1">
-		<enhanced:img
-			class="relative float-right sm:w-[150px] lg:w-[222px]"
-			src="$lib/assets/nachexil-basel.png?w=222"
-			alt="Ulrich Becher in Basel"
-		/>
 	</div>
 </ContentContainer>
 <ContentContainer dark>
-	<h2 class="h2 mb-4">Virtueller Bestand</h2>
+	<h2 class="h2 mb-4">Collection</h2>
 
 	<div class="flex flex-col md:flex-row justify-between">
 		<div class="md:w-1/2">
 			<div class="flex justify-between">
-				<h3 class="h3 mb-3">Suche</h3>
+				<h3 class="h3 mb-3">Search and Filter</h3>
 				<SlideToggle
 					name="advanced-mode"
 					active="bg-tertiary-600"

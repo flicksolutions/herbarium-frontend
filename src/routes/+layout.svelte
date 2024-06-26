@@ -49,30 +49,8 @@
 
 	const pages = [
 		{ slug: 'Home', path: '/' },
-		{ slug: 'Über das Projekt', path: '/about' },
-		{ slug: 'Biographie', path: '/bio' }
+		{ slug: 'about', path: '/about' }
 	];
-
-	/** @type {import('@skeletonlabs/skeleton').ToastSettings} */
-	const t = {
-		message: `Die vorliegende Anwendung hat prototypischen Charakter und
-			 stellt kein dauerhaftes Angebot dar. Die Reproduktion der
-			 dargebotenen Materialien ist ohne ausdrückliche Zusage der bestandeshaltenden Institutionen untersagt.`,
-		action: {
-			label: `<i class="fa-solid fa-trash"></i>`,
-			response: () => {
-				$showWarning = false;
-				toastStore.clear();
-			}
-		},
-		autohide: false,
-		background: 'variant-filled-warning'
-	};
-	onMount(() => {
-		if ($showWarning) {
-			toastStore.trigger(t);
-		}
-	});
 </script>
 
 <Drawer height="h-auto">
@@ -117,27 +95,19 @@
 	<svelte:fragment slot="pageFooter">
 		<div class="grid grid-cols-2 md:!grid-cols-5 gap-1 lg:ml-10 lg:mr-10">
 			<a
-				href="https://www.nb.admin.ch/snl/de/home/ueber-uns/sla.html"
+				href="https://www.boga.unibe.ch/wissenschaft/herbarium/index_ger.html"
 				target="_blank"
 				rel="noopener"
 			>
 				<enhanced:img
-					src="$lib/assets/Logo_der_Schweizerischen_Eidgenossenschaft.svg"
-					alt="Logo der Schweizerischen Eidgenossenschaft"
-					class="max-h-[80px]"
-				/>
-			</a>
-
-			<a href="https://www.dnb.de/DE/Ueber-uns/DEA/dea_node.html" target="_blank" rel="noopener">
-				<enhanced:img
-					src="$lib/assets/DNB.svg"
-					alt="Logo der Deutschen Nationalbibliothek"
+					src="$lib/assets/BOGA.jpg"
+					alt="Logo of the botanical garden"
 					class="max-h-[80px]"
 				/>
 			</a>
 
 			<p class="h5 md:h6 lg:h5 text-black col-span-2 justify-self-start">
-				Ein Prototyp des Deutschen Exilarchivs (DEA) und des Schweizerischen Literarurarchivs (SLA)
+				A project of the Herbarium of the botanical garden of the University of Bern
 			</p>
 
 			<a

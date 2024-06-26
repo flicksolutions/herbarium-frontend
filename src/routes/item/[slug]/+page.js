@@ -11,14 +11,6 @@ export async function load({ params, fetch }) {
 		iiif: await fetch(`https://iiif.ub.unibe.ch/image/v3/${item?.['Image GUID']}/info.json`).then(
 			(res) => res.json()
 		),
-		// .then(
-		// 	(json) => console.log(json)
-		// 	// json.sequences[0].canvases.map(
-		// 	// 	(
-		// 	// 		/** @type {{ images: { resource: { service: { [x: string]: any; }; }; }[]; }} */ canvas
-		// 	// 	) => canvas.images[0].resource.service['@id']
-		// 	// )
-		// ),
 		structure
 	};
 }
