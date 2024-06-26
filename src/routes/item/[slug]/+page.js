@@ -1,29 +1,24 @@
-import itemData from '$lib/becher_full_json.json';
+import itemData from '$lib/combined-data.json';
 import structure from '$lib/structure.json';
 
 /** @type {import('./$types').PageLoad} */
-export function load({ params }) {
-	// const filePromise = import(`../../../lib/items/${params.slug}.json`);
-	const item = itemData.find((item) => item.key === params.slug);
+export async function load({ params, fetch }) {
+	const item = itemData.find((item) => item.catalogNumber === params.slug);
 
 	return {
 		key: params.slug,
 		metadata: item,
-		structure,
-		related: [
-			item?.wit ? itemData.filter((i) => i.wit.some((element) => item.wit.includes(element))) : [],
-			itemData
-				.filter((i) => /*i.prototype && */ i.category === item.category)
-				.map((item) => {
-					// eslint-disable-next-line no-unused-vars
-					const { entry_type, prototype, ...rest } = item;
-					return rest;
-				})
-		]
+		iiif: await fetch(`https://iiif.ub.unibe.ch/image/v3/${item?.['Image GUID']}/info.json`).then(
+			(res) => res.json()
+		),
+		// .then(
+		// 	(json) => console.log(json)
+		// 	// json.sequences[0].canvases.map(
+		// 	// 	(
+		// 	// 		/** @type {{ images: { resource: { service: { [x: string]: any; }; }; }[]; }} */ canvas
+		// 	// 	) => canvas.images[0].resource.service['@id']
+		// 	// )
+		// ),
+		structure
 	};
-}
-
-/** @type {import('./$types').EntryGenerator} */
-export function entries() {
-	return itemData.filter((i) => i.prototype).map((item) => ({ slug: item.key }));
 }

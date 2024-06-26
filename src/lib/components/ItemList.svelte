@@ -52,6 +52,7 @@
 	<table class="table table-hover">
 		<thead>
 			<tr>
+				<th>Scientific Name</th>
 				{#each structure as { label }}
 					<th>{label}</th>
 				{/each}
@@ -60,6 +61,9 @@
 		<tbody>
 			{#each visibleItems as row (row.catalogNumber)}
 				<tr>
+					<td
+						><a href={`${base}/item/${row.catalogNumber}`}>{row.genus} {row.specificEpithet}</a></td
+					>
 					{#each structure as { key }}
 						<td>{row[key]}</td>
 					{/each}

@@ -1,8 +1,7 @@
 <script>
 	import ContentContainer from '$lib/components/ContentContainer.svelte';
-	import OneRow from '$lib/components/OneRow.svelte';
 	import { onMount } from 'svelte';
-	import { assets, base } from '$app/paths';
+	import { assets } from '$app/paths';
 
 	/**
 	 * @type {import('openseadragon') | undefined}
@@ -75,7 +74,7 @@
 					DOWN: 'flip_pressed.svg'
 				}
 			},
-			sequenceMode: true
+			sequenceMode: false
 		});
 	});
 
@@ -83,17 +82,8 @@
 	export let data;
 
 	$: {
-		if (viewer && data.metadata['iiif-manifest']) {
-			fetch(data.metadata['iiif-manifest'])
-				.then((res) => res.json())
-				.then((json) => {
-					const iiif = json.sequences[0].canvases.map(
-						(
-							/** @type {{ images: { resource: { service: { [x: string]: any; }; }; }[]; }} */ canvas
-						) => canvas.images[0].resource.service['@id']
-					);
-					viewer.open(iiif);
-				});
+		if (viewer && data.iiif) {
+			viewer.open(data.iiif);
 		}
 	}
 </script>
@@ -102,100 +92,28 @@
 	<div class="md:grid md:grid-cols-2 md:grid-rows-[auto_1fr] gap-4 lg:gap-6">
 		{#if data.metadata}
 			{@const d = data.metadata}
-			{@const variant =
-				d.holding_institution === 'SLA' ? 'variant-filled-primary' : 'variant-filled-tertiary'}
-			{@const bg = d.holding_institution === 'SLA' ? 'bg-primary-500' : 'bg-tertiary-500'}
 			<div class="md:col-span-2 lg:col-span-1 lg:col-start-2">
 				<h1 class="h1 text-balance pb-2 md:pb-4 inline">
-					{d.title}
+					{d.genus}
+					{d.specificEpithet}
 				</h1>
-				<span class="badge {variant}">{d.holding_institution}</span>
 			</div>
-			<div class="lg:row-span-2 lg:row-start-1 w-full h-fit {bg}">
+			<div class="lg:row-span-2 lg:row-start-1 w-full h-fit bg-primary-500">
 				<div id="viewer" class="w-full h-[60vh]"></div>
 			</div>
 			<dl class="grid grid-cols-[1fr_4fr] justify-between h-fit">
-				{#each data.structure.find((s) => s.type === d.type)?.fields || [] as { label, key }}
+				{#each data.structure as { label, key }}
 					{@const metadataVal = d[key]}
 					{#if metadataVal}
 						<dt class="border-r-4 border-current pr-4 pt-4">
 							{label}
 						</dt>
 						<dd class="pl-2 pt-4">
-							{#if Array.isArray(metadataVal)}
-								{#each metadataVal as item, i}
-									{#if typeof item === 'object'}
-										{item.name}
-										{#if item.additional && item.additional !== 'undefined'}
-											({item.additional})
-										{/if}
-
-										{#if item.uri}
-											&nbsp;<a
-												title="nähere Informationen"
-												class="anchor"
-												href={item.uri}
-												target="_blank"
-												rel="noopener"
-											>
-												<i class="fa-solid fa-circle-info"></i>
-												<span class="sr-only">nähere Informationen</span>
-											</a>
-										{/if}
-									{:else}
-										{item}
-									{/if}
-
-									{#if i !== metadataVal.length - 1}
-										<br />
-									{/if}
-								{/each}
-							{:else if typeof metadataVal === 'object'}
-								{metadataVal.name}
-								{#if metadataVal.uri}
-									&nbsp;<a
-										title="nähere Informationen"
-										class="anchor"
-										href={metadataVal.uri}
-										target="_blank"
-										rel="noopener"
-									>
-										<i class="fa-solid fa-circle-info"></i>
-										<span class="sr-only">nähere Informationen</span>
-									</a>
-								{/if}
-							{:else}
-								{metadataVal}
-							{/if}
+							{metadataVal}
 						</dd>
 					{/if}
 				{/each}
-				{#each Object.entries(d['links']) as link}
-					{@const [label, url] = link}
-					<dt class="border-r-4 border-current pr-4 pt-4">{label}</dt>
-					<dd class="pl-2 pt-4">
-						<a class="anchor" href={url} target="_blank" rel="noopener">{url}</a>
-						{#if label === 'gnd' || label === 'helveticArchives'}
-							<span>[{d.category_local_name}]</span>
-						{/if}
-					</dd>
-				{/each}
 			</dl>
-			<a class="anchor col-start-2" href="{base}/related-tests?s={d.key}"
-				>Zum Ähnlichkeitsvergleich (Testseite) für dieses Katalogisat</a
-			>
 		{/if}
 	</div>
 </ContentContainer>
-{#if data.related[0].length}
-	<ContentContainer dark>
-		<h2 class="h2">Verwandte Katalogisate (basierend auf Werknormdaten)</h2>
-		<OneRow items={data.related[0]} />
-	</ContentContainer>
-{/if}
-{#if data.related[1]?.length}
-	<ContentContainer dark>
-		<h2 class="h2">Verwandte Katalogisate (basierend auf Bestandesstruktur)</h2>
-		<OneRow items={data.related[1]} />
-	</ContentContainer>
-{/if}
