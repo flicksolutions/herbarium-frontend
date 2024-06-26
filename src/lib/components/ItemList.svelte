@@ -15,8 +15,9 @@
 
 		intersectionObserver = new IntersectionObserver((entries) => {
 			entries.forEach((entry) => {
-				const eventName = entry.isIntersecting ? 'enterViewport' : 'exitViewport';
-				entry.target.dispatchEvent(new CustomEvent(eventName));
+				if (!entry.isIntersecting) return;
+				visibleNumber += 30;
+				intersectionObserver.unobserve(entry.target);
 			});
 		});
 	}
@@ -59,11 +60,11 @@
 			</tr>
 		</thead>
 		<tbody>
-			{#each visibleItems as row (row.catalogNumber)}
-				<tr>
-					<td
-						><a href={`${base}/item/${row.catalogNumber}`}>{row.genus} {row.specificEpithet}</a></td
-					>
+			{#each visibleItems as row, i (row.catalogNumber)}
+				<tr use:viewport={i !== visibleItems.length - 1}>
+					<td>
+						<a href={`${base}/item/${row.catalogNumber}`}>{row.genus} {row.specificEpithet}</a>
+					</td>
 					{#each structure as { key }}
 						<td>{row[key]}</td>
 					{/each}
