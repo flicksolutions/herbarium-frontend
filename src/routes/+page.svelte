@@ -1,14 +1,9 @@
 <script>
 	import ContentContainer from '$lib/components/ContentContainer.svelte';
-	import Grid from '$lib/components/Grid.svelte';
+	import ItemList from '$lib/components/ItemList.svelte';
 	import { SlideToggle, RadioGroup, RadioItem, popup } from '@skeletonlabs/skeleton';
 	import MiniSearch from 'minisearch';
 	import { slide } from 'svelte/transition';
-
-	/**
-	 * @type {string[]}
-	 */
-	let checkedNodes;
 
 	export let data;
 
@@ -36,8 +31,7 @@
 				return false;
 			}
 			return 0.2;
-		},
-		boost: { title: 2, date_reg: 2 }
+		}
 	};
 
 	/**
@@ -61,22 +55,7 @@
 
 	let filtereditems = data.items;
 	$: {
-		if (checkedNodes && checkedNodes.length > 0) {
-			if (searchtext) {
-				asyncSearch(searchtext, searchConfig).then((results) => {
-					// filter all items for checked categories and search results
-					filtereditems = results.filter(
-						(/** @type {{ category: { toString: () => string; }; }} */ i) =>
-							checkedNodes.includes(i.category.toString())
-					);
-				});
-			} else {
-				filtereditems = data.items.filter((item) =>
-					// filter all items for checked categories
-					checkedNodes.includes(item.category.toString())
-				);
-			}
-		} else if (searchtext) {
+		if (searchtext) {
 			// filter all items for search results
 			asyncSearch(searchtext, searchConfig).then((results) => {
 				filtereditems = results;
@@ -88,7 +67,7 @@
 
 	$: {
 		if (advancedToggle) {
-			if (Object.values(advancedFields).some((i) => !!i) || holdingInstitutionToggle) {
+			if (Object.values(advancedFields).some((i) => !!i)) {
 				searchtext = {
 					combineWith: 'AND',
 					queries: [
@@ -106,19 +85,11 @@
 						)
 					]
 				};
-				if (holdingInstitutionToggle) {
-					searchtext.queries.push({
-						fields: ['holding_institution'],
-						queries: [holdingInstitutionToggle]
-					});
-				}
 			} else {
 				searchtext = '';
 			}
 		}
 	}
-	/** @type { "DEA"|"SLA"|false }*/
-	let holdingInstitutionToggle = false;
 </script>
 
 <ContentContainer
@@ -189,6 +160,6 @@
 		</div>
 	</div>
 </ContentContainer>
-<!-- <ContentContainer>
-	<Grid items={filtereditems} />
-</ContentContainer> -->
+<ContentContainer>
+	<ItemList structure={data.itemstructure} items={filtereditems} />
+</ContentContainer>
