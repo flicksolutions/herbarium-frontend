@@ -97,13 +97,13 @@
 <!-- Responsive Container (recommended) -->
 <div class="table-container">
 	<!-- Native Table Element -->
-	<table class="table table-hover">
+	<table class="table table-interactive">
 		<thead>
 			<tr>
-				<th>Scientific Name</th>
+				<th class="table-cell-fit">Scientific Name</th>
 				{#each structure as { key, label }}
-					<th class="hover:cursor-pointer" on:click={(e) => handleSort(e, key)}
-						>{label} <i class="fa-solid fa-sort"></i></th
+					<th class="hover:cursor-pointer table-cell-fit" on:click={(e) => handleSort(e, key)}
+						>{label} <i class="fa-solid pointer-events-none fa-sort"></i></th
 					>
 				{/each}
 			</tr>
@@ -111,14 +111,16 @@
 		<tbody>
 			{#each visibleItems as row, i (row.catalogNumber)}
 				<tr use:viewport={i !== visibleItems.length - 1}>
-					<td>
+					<td class="table-cell-fit">
 						<a href={`${base}/item/${row.catalogNumber}`}>
 							{row.genus}
 							{row.specificEpithet}
 						</a>
 					</td>
 					{#each structure as { key }}
-						<td><a href={`${base}/item/${row.catalogNumber}`}>{row[key]}</a></td>
+						<td class="table-cell-fit"
+							><a href={`${base}/item/${row.catalogNumber}`}>{row[key]}</a></td
+						>
 					{/each}
 				</tr>
 			{/each}
