@@ -1,9 +1,14 @@
 <script>
 	import { base } from '$app/paths';
+	/**
+	 * @type {any[]}
+	 */
 	export let items = [];
-	export let structure = [];
 
-	let className = '';
+	/**
+	 * @type {Array<{label: string, key: string}>}
+	 */
+	export let structure = [];
 
 	/**
 	 * @type IntersectionObserver
@@ -43,6 +48,48 @@
 		};
 	}
 
+	const handleSort =
+		/**
+		 * @param {MouseEvent & {target: HTMLElement}} event
+		 * @param {string} key
+		 */
+		(event, key) => {
+			const i = event.target?.querySelector('i');
+
+			const sort = (key, order) => {
+				items = items.sort((a, b) => {
+					if (order === 'asc') {
+						if (a[key] < b[key]) return -1;
+						if (a[key] > b[key]) return 1;
+						return 0;
+					} else {
+						if (a[key] > b[key]) return -1;
+						if (a[key] < b[key]) return 1;
+						return 0;
+					}
+				});
+			};
+
+			if (i) {
+				if (i.classList.contains('fa-sort')) {
+					i.classList.remove('fa-sort');
+					i.classList.add('fa-sort-up');
+					sort(key, 'asc');
+				} else if (i.classList.contains('fa-sort-up')) {
+					i.classList.remove('fa-sort-up');
+					i.classList.add('fa-sort-down');
+					sort(key, 'desc');
+				} else {
+					i.classList.remove('fa-sort-down');
+					i.classList.add('fa-sort');
+					if (items[0].hasOwnProperty('score')) {
+						sort('score', 'desc');
+					} else {
+						sort('catalogNumber', 'desc');
+					}
+				}
+			}
+		};
 	let visibleNumber = 30;
 	$: visibleItems = items.slice(0, visibleNumber);
 </script>
@@ -54,8 +101,10 @@
 		<thead>
 			<tr>
 				<th>Scientific Name</th>
-				{#each structure as { label }}
-					<th>{label}</th>
+				{#each structure as { key, label }}
+					<th class="hover:cursor-pointer" on:click={(e) => handleSort(e, key)}
+						>{label} <i class="fa-solid fa-sort"></i></th
+					>
 				{/each}
 			</tr>
 		</thead>
@@ -63,10 +112,13 @@
 			{#each visibleItems as row, i (row.catalogNumber)}
 				<tr use:viewport={i !== visibleItems.length - 1}>
 					<td>
-						<a href={`${base}/item/${row.catalogNumber}`}>{row.genus} {row.specificEpithet}</a>
+						<a href={`${base}/item/${row.catalogNumber}`}>
+							{row.genus}
+							{row.specificEpithet}
+						</a>
 					</td>
 					{#each structure as { key }}
-						<td>{row[key]}</td>
+						<td><a href={`${base}/item/${row.catalogNumber}`}>{row[key]}</a></td>
 					{/each}
 				</tr>
 			{/each}
