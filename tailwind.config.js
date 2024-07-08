@@ -2,7 +2,7 @@ import { join } from 'path';
 
 import forms from '@tailwindcss/forms';
 import { skeleton } from '@skeletonlabs/tw-plugin';
-import { becher } from './src/becher';
+import { herbarium } from './src/herbarium';
 /** @type {import('tailwindcss').Config} */
 export default {
 	darkMode: 'class',
@@ -24,7 +24,7 @@ export default {
 						enhancements: true
 					}
 				],
-				custom: [becher]
+				custom: [herbarium]
 			}
 		})
 	]
