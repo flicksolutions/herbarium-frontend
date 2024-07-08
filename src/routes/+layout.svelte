@@ -35,9 +35,7 @@
 	const showWarning = localStorageStore('warning', true);
 
 	$: classesActive = (/** @type {string} */ href) =>
-		base + href === $page.url.pathname
-			? 'bg-primary-500 hover:text-primary-400 text-secondary-500'
-			: 'hover:text-primary-500';
+		base + href === $page.url.pathname ? 'bg-primary-500' : '';
 
 	function drawerOpen() {
 		const /** @type {import('@skeletonlabs/skeleton').DrawerSettings} */ s = {
@@ -79,7 +77,8 @@
 				{#each pages as page}
 					<a
 						href={`${base}${page.path}`}
-						class="list-nav-item h-full p-4 {classesActive(page.path)}">{page.slug}</a
+						class="list-nav-item h-full p-4 bg-primary-hover-token {classesActive(page.path)}"
+						>{page.slug}</a
 					>
 				{/each}
 			</nav>
