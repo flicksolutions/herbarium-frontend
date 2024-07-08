@@ -14,6 +14,6 @@
 			Sebastian Flick
 		</a>
 		(<a class="anchor" target="_blank" href="https://www.dsl.unibe.ch/">Data Science Lab</a>,
-		University Bern).
+		University of Bern).
 	</p>
 </ContentContainer>

@@ -11,7 +11,7 @@ export const herbarium = {
 		'--theme-border-base': '1px',
 		// =~= Theme On-X Colors =~=
 		'--on-primary': '0 0 0',
-		'--on-secondary': '0 0 0',
+		'--on-secondary': '255 255 255',
 		'--on-tertiary': '0 0 0',
 		'--on-success': '0 0 0',
 		'--on-warning': '0 0 0',
@@ -29,17 +29,17 @@ export const herbarium = {
 		'--color-primary-700': '58 128 61', // #3a803d
 		'--color-primary-800': '46 102 49', // #2e6631
 		'--color-primary-900': '38 83 40', // #265328
-		// secondary | #5199c9
-		'--color-secondary-50': '229 240 247', // #e5f0f7
-		'--color-secondary-100': '220 235 244', // #dcebf4
-		'--color-secondary-200': '212 230 242', // #d4e6f2
-		'--color-secondary-300': '185 214 233', // #b9d6e9
-		'--color-secondary-400': '133 184 217', // #85b8d9
-		'--color-secondary-500': '81 153 201', // #5199c9
-		'--color-secondary-600': '73 138 181', // #498ab5
-		'--color-secondary-700': '61 115 151', // #3d7397
-		'--color-secondary-800': '49 92 121', // #315c79
-		'--color-secondary-900': '40 75 98', // #284b62
+		// secondary | #192329
+		'--color-secondary-50': '221 222 223', // #dddedf
+		'--color-secondary-100': '209 211 212', // #d1d3d4
+		'--color-secondary-200': '198 200 202', // #c6c8ca
+		'--color-secondary-300': '163 167 169', // #a3a7a9
+		'--color-secondary-400': '94 101 105', // #5e6569
+		'--color-secondary-500': '25 35 41', // #192329
+		'--color-secondary-600': '23 32 37', // #172025
+		'--color-secondary-700': '19 26 31', // #131a1f
+		'--color-secondary-800': '15 21 25', // #0f1519
+		'--color-secondary-900': '12 17 20', // #0c1114
 		// tertiary | #c0b6b4
 		'--color-tertiary-50': '246 244 244', // #f6f4f4
 		'--color-tertiary-100': '242 240 240', // #f2f0f0

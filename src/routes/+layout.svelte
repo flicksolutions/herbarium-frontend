@@ -105,12 +105,12 @@
 				/>
 			</a>
 
-			<p class="h5 md:h6 lg:h5 text-black col-span-2 justify-self-start">
+			<p class="h5 md:h6 lg:h5 col-span-2 justify-self-start">
 				A project of the Herbarium of the botanical garden of the University of Bern
 			</p>
 
 			<a
-				class="h5 anchor text-black col-span-2 md:col-span-1 justify-self-start md:justify-self-end"
+				class="h5 anchor col-span-2 md:col-span-1 justify-self-start md:justify-self-end"
 				href="{base}/impressum"
 			>
 				Impressum
