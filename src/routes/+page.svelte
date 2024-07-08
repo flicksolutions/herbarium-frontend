@@ -1,7 +1,7 @@
 <script>
 	import ContentContainer from '$lib/components/ContentContainer.svelte';
 	import ItemList from '$lib/components/ItemList.svelte';
-	import { SlideToggle, RadioGroup, RadioItem, popup } from '@skeletonlabs/skeleton';
+	import { SlideToggle } from '@skeletonlabs/skeleton';
 	import MiniSearch from 'minisearch';
 	import { slide } from 'svelte/transition';
 
@@ -102,6 +102,7 @@
 		</p>
 	</div>
 </ContentContainer>
+<div class="image-background h-[30vh]"></div>
 <ContentContainer dark>
 	<h2 class="h2 mb-4">Collection</h2>
 
@@ -151,6 +152,16 @@
 		</div>
 	</div>
 </ContentContainer>
-<ContentContainer>
+<section class="mx-4">
 	<ItemList structure={data.itemstructure} items={filtereditems} />
-</ContentContainer>
+</section>
+
+<style>
+	.image-background {
+		background-image: url('$lib/assets/P1044324.00_00_45_03.Still003.jpg');
+		background-size: cover;
+		background-position: center center;
+		background-attachment: fixed;
+		background-repeat: no-repeat;
+	}
+</style>
