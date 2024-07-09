@@ -98,7 +98,7 @@
 					{d.specificEpithet}
 				</h1>
 			</div>
-			<div class="lg:row-span-2 lg:row-start-1 w-full h-fit bg-primary-500">
+			<div class="lg:row-span-2 lg:row-start-1 w-full h-fit bg-primary-900">
 				<div id="viewer" class="w-full h-[60vh]"></div>
 			</div>
 			<dl class="grid grid-cols-[1fr_4fr] justify-between h-fit">
