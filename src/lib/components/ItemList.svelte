@@ -92,6 +92,15 @@
 				if (i.classList.contains('fa-sort')) {
 					i.classList.remove('fa-sort');
 					i.classList.add('fa-sort-up');
+					// set 'fa-sort' to all other i
+					const elements = document.querySelectorAll('.fa-sort-up, .fa-sort-down');
+					elements.forEach((element) => {
+						if (element !== i) {
+							element.classList.remove('fa-sort-up');
+							element.classList.remove('fa-sort-down');
+							element.classList.add('fa-sort');
+						}
+					});
 					sort(key, 'asc');
 				} else if (i.classList.contains('fa-sort-up')) {
 					i.classList.remove('fa-sort-up');
