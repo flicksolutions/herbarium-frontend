@@ -20,9 +20,16 @@
 
 		intersectionObserver = new IntersectionObserver((entries) => {
 			entries.forEach((entry) => {
-				if (!entry.isIntersecting) return;
-				visibleNumber += 30;
-				intersectionObserver.unobserve(entry.target);
+				if (entry.isIntersecting) {
+					if (visibleNumber < items.length) {
+						visibleNumber += 30;
+						intersectionObserver.unobserve(entry.target);
+					} else {
+						helperScrollbar.style.display = 'none';
+					}
+				} else {
+					helperScrollbar.style.display = 'block';
+				}
 			});
 		});
 	}
@@ -50,13 +57,14 @@
 
 	const handleSort =
 		/**
-		 * @param {MouseEvent & {target: HTMLElement}} event
+		 * @param {MouseEvent} event
 		 * @param {string} key
 		 */
 		(event, key) => {
+			// @ts-ignore
 			const i = event.target?.querySelector('i');
 
-			const sort = (key, order) => {
+			const sort = (/** @type {string} */ key, /** @type {string} */ order) => {
 				items = items.sort((a, b) => {
 					if (order === 'asc') {
 						if (a[key] < b[key]) return -1;
@@ -92,19 +100,51 @@
 		};
 	let visibleNumber = 30;
 	$: visibleItems = items.slice(0, visibleNumber);
+
+	/**
+	 * @type {HTMLDivElement}
+	 */
+	let table;
+
+	/**
+	 * @type {HTMLDivElement}
+	 */
+	let helperScrollbar;
+
+	/**
+	 * @type {HTMLDivElement}
+	 */
+	let innerScrollbar;
+
+	$: {
+		if (helperScrollbar && innerScrollbar) {
+			setScrollbarSizes();
+		}
+	}
+
+	const setScrollbarSizes = () => {
+		helperScrollbar.style.width = `${table.clientWidth}px`;
+		innerScrollbar.style.width = `${table.scrollWidth}px`;
+	};
 </script>
 
+<svelte:window
+	on:resize={() => {
+		setScrollbarSizes();
+	}}
+/>
+
 <!-- Responsive Container (recommended) -->
-<div class="table-container">
+<div class="table-container" bind:this={table}>
 	<!-- Native Table Element -->
 	<table class="table table-interactive">
 		<thead>
 			<tr>
 				<th class="table-cell-fit">Scientific Name</th>
 				{#each structure as { key, label }}
-					<th class="hover:cursor-pointer table-cell-fit" on:click={(e) => handleSort(e, key)}
-						>{label} <i class="fa-solid pointer-events-none fa-sort"></i></th
-					>
+					<th class="hover:cursor-pointer table-cell-fit" on:click={(e) => handleSort(e, key)}>
+						{label} <i class="fa-solid pointer-events-none fa-sort"></i>
+					</th>
 				{/each}
 			</tr>
 		</thead>
@@ -126,4 +166,14 @@
 			{/each}
 		</tbody>
 	</table>
+</div>
+<div
+	class="helper-scrollbar fixed bottom-0 overflow-x-auto h-4"
+	bind:this={helperScrollbar}
+	on:scroll={(e) => {
+		// @ts-ignore
+		table.scrollLeft = e.target.scrollLeft;
+	}}
+>
+	<div class="inner-scrollbar h-px" bind:this={innerScrollbar}></div>
 </div>
