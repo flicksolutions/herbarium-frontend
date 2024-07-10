@@ -1,5 +1,6 @@
 <script>
 	import { base } from '$app/paths';
+	import { blur, fly } from 'svelte/transition';
 	/**
 	 * @type {any[]}
 	 */
@@ -20,15 +21,23 @@
 
 		intersectionObserver = new IntersectionObserver((entries) => {
 			entries.forEach((entry) => {
-				if (entry.isIntersecting) {
-					if (visibleNumber < items.length) {
-						visibleNumber += 30;
-						intersectionObserver.unobserve(entry.target);
-					} else {
-						helperScrollbar.style.display = 'none';
+				if (entry.target.tagName === 'THEAD') {
+					if (entry.isIntersecting) {
+						showHelperElements = false;
+					} else if (entry.boundingClientRect.y < 0) {
+						showHelperElements = true;
 					}
 				} else {
-					helperScrollbar.style.display = 'block';
+					if (entry.isIntersecting) {
+						if (visibleNumber < items.length) {
+							visibleNumber += 30;
+							intersectionObserver.unobserve(entry.target);
+						} else {
+							showHelperScrollbar = false;
+						}
+					} else {
+						showHelperScrollbar = true;
+					}
 				}
 			});
 		});
@@ -101,6 +110,9 @@
 	let visibleNumber = 30;
 	$: visibleItems = items.slice(0, visibleNumber);
 
+	let showHelperElements = false;
+	let showHelperScrollbar = false;
+
 	/**
 	 * @type {HTMLDivElement}
 	 */
@@ -136,9 +148,20 @@
 
 <!-- Responsive Container (recommended) -->
 <div class="table-container" bind:this={table}>
-	<!-- Native Table Element -->
+	{#if showHelperElements}
+		<button
+			class="btn-icon variant-ghost-primary fixed top-24 right-6 z-50"
+			on:click={() => {
+				table.scrollIntoView({ behavior: 'smooth' });
+			}}
+			in:fly={{ x: 100 }}
+			out:blur
+		>
+			<i class="fa-solid fa-arrows-up-to-line"></i>
+		</button>
+	{/if}
 	<table class="table table-interactive">
-		<thead>
+		<thead use:viewport={false}>
 			<tr>
 				<th class="table-cell-fit">Scientific Name</th>
 				{#each structure as { key, label }}
@@ -167,13 +190,15 @@
 		</tbody>
 	</table>
 </div>
-<div
-	class="helper-scrollbar fixed bottom-0 overflow-x-auto h-4"
-	bind:this={helperScrollbar}
-	on:scroll={(e) => {
-		// @ts-ignore
-		table.scrollLeft = e.target.scrollLeft;
-	}}
->
-	<div class="inner-scrollbar h-px" bind:this={innerScrollbar}></div>
-</div>
+{#if showHelperScrollbar}
+	<div
+		class="helper-scrollbar fixed bottom-0 overflow-x-auto h-4"
+		bind:this={helperScrollbar}
+		on:scroll={(e) => {
+			// @ts-ignore
+			table.scrollLeft = e.target.scrollLeft;
+		}}
+	>
+		<div class="inner-scrollbar h-px" bind:this={innerScrollbar}></div>
+	</div>
+{/if}
