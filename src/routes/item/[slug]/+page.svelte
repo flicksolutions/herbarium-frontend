@@ -2,6 +2,7 @@
 	import ContentContainer from '$lib/components/ContentContainer.svelte';
 	import { onMount } from 'svelte';
 	import { assets } from '$app/paths';
+	import { addFlagToCountryCode } from '$lib/functions';
 
 	/**
 	 * @type {import('openseadragon') | undefined}
@@ -109,7 +110,11 @@
 							{label}
 						</dt>
 						<dd class="pl-2 pt-4">
-							{metadataVal}
+							{#if key === 'countryCode'}
+								{@html addFlagToCountryCode(metadataVal)}
+							{:else}
+								{metadataVal}
+							{/if}
 						</dd>
 					{/if}
 				{/each}

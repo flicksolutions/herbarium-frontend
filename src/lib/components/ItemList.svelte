@@ -1,5 +1,6 @@
 <script>
 	import { base } from '$app/paths';
+	import { addFlagToCountryCode } from '$lib/functions';
 	import { blur, fly } from 'svelte/transition';
 	/**
 	 * @type {any[]}
@@ -181,9 +182,15 @@
 						</a>
 					</td>
 					{#each structure as { key }}
-						<td class="table-cell-fit"
-							><a href={`${base}/item/${row.catalogNumber}`}>{row[key]}</a></td
-						>
+						{#if key === 'countryCode'}
+							<td class="table-cell-fit">
+								{@html addFlagToCountryCode(row[key])}
+							</td>
+						{:else}
+							<td class="table-cell-fit"
+								><a href={`${base}/item/${row.catalogNumber}`}>{row[key]}</a></td
+							>
+						{/if}
 					{/each}
 				</tr>
 			{/each}
