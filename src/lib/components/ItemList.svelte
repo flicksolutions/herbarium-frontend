@@ -177,6 +177,7 @@
 				<tr use:viewport={i !== visibleItems.length - 1}>
 					<td class="table-cell-fit">
 						<a href={`${base}/item/${row.catalogNumber}`}>
+							<i class="fa-solid fa-camera"></i>
 							{row.genus}
 							{row.specificEpithet}
 						</a>
