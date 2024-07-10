@@ -1,6 +1,6 @@
 <script>
 	import { base } from '$app/paths';
-	import { addFlagToCountryCode } from '$lib/functions';
+	import { addFlagToCountryCode, setGenusAndSpeciesItalic } from '$lib/functions';
 	import { blur, fly } from 'svelte/transition';
 	/**
 	 * @type {any[]}
@@ -183,7 +183,7 @@
 		<tbody>
 			{#each visibleItems as row, i (row.catalogNumber)}
 				<tr use:viewport={i !== visibleItems.length - 1}>
-					<td class="table-cell-fit">
+					<td class="table-cell-fit italic">
 						<a href={`${base}/item/${row.catalogNumber}`}>
 							<i class="fa-solid fa-camera"></i>
 							{row.genus}
@@ -191,15 +191,17 @@
 						</a>
 					</td>
 					{#each structure as { key }}
-						{#if key === 'countryCode'}
-							<td class="table-cell-fit">
+						<td class="table-cell-fit">
+							{#if key === 'countryCode'}
 								{@html addFlagToCountryCode(row[key])}
-							</td>
-						{:else}
-							<td class="table-cell-fit"
-								><a href={`${base}/item/${row.catalogNumber}`}>{row[key]}</a></td
-							>
-						{/if}
+							{:else if key === 'genus' || key === 'specificEpithet'}
+								<span class="italic">{row[key]}</span>
+							{:else if key === 'acceptedNameUsage'}
+								{@html setGenusAndSpeciesItalic(row[key], row.genus, row.specificEpithet)}
+							{:else}
+								<a href={`${base}/item/${row.catalogNumber}`}>{row[key]}</a>
+							{/if}
+						</td>
 					{/each}
 				</tr>
 			{/each}
