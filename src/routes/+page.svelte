@@ -132,7 +132,7 @@
 					/>
 				</label>
 			{:else}
-				{#each data.itemstructure as item, i}
+				{#each data.itemstructure as item}
 					<label class="label" transition:slide|global>
 						<span>
 							{item.label}
