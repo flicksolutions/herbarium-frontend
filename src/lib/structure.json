@@ -1,11 +1,12 @@
 [
+	{ "label": "Accepted Name Usage", "key": "acceptedNameUsage" },
+	{ "label": "Family", "key": "family" },
 	{ "label": "Genus", "key": "genus" },
 	{ "label": "Species", "key": "specificEpithet" },
 	{ "label": "Author", "key": "scientificNameAuthorship" },
-	{ "label": "Accepted Name Usage", "key": "acceptedNameUsage" },
-	{ "label": "Family", "key": "family" },
+	{ "label": "Collector", "key": "recordedBy" },
+	{ "label": "Year", "key": "year" },
 	{ "label": "Country", "key": "countryCode" },
 	{ "label": "Locality", "key": "locality" },
-	{ "label": "Year", "key": "year" },
-	{ "label": "Collector", "key": "recordedBy" }
+	{ "label": "Catalog Number", "key": "catalogNumber" }
 ]
