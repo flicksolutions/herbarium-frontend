@@ -47,7 +47,7 @@
 
 	const pages = [
 		{ slug: 'Home', path: '/' },
-		{ slug: 'about', path: '/about' }
+		{ slug: 'about us', path: '/about' }
 	];
 </script>
 
