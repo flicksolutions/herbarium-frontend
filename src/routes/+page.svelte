@@ -96,9 +96,11 @@
 	dark
 >
 	<div class="z-10 col-span-full md:col-span-1 row-start-1">
-		<h1 class="h1 my-16">digital Herbarium</h1>
+		<h1 class="h1 my-16">Herbarium Bernense</h1>
 		<p class="p lg:text-xl">
-			search our collection of dried plants from the botanical garden of the University of Bern
+			The Herbarium Bernense contains about 500,000 herbarium specimens, including type specimens
+			and valuable historical collections. Currently about 10% of our collection is digitized and
+			can be accessed here.
 		</p>
 	</div>
 </ContentContainer>
