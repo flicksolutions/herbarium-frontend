@@ -91,25 +91,20 @@
 	}
 </script>
 
-<ContentContainer
-	class="h-[376px] sm:h-[223px] lg:h-[345px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[1fr_max-content]"
-	dark
->
-	<div class="z-10 col-span-full md:col-span-1 row-start-1">
-		<h1 class="h1 my-16">Herbarium Bernense</h1>
-		<p class="p lg:text-xl">
-			The Herbarium Bernense contains about 500,000 herbarium specimens, including type specimens
-			and valuable historical collections. Currently about 10% of our collection is digitized and
-			can be accessed here.
-		</p>
-	</div>
-</ContentContainer>
-<div class="image-background h-[30vh]"></div>
-<ContentContainer dark>
-	<h2 class="h2 mb-4">Collection</h2>
-
-	<div class="flex flex-col md:flex-row justify-between">
-		<div class="md:w-1/2">
+<div class="image-background h-[30vh]">
+	<h1 class="h1 pt-16 px-16">Herbarium Bernense</h1>
+	<p class="px-16">Herbarium of the Botanical Garden of the University of Bern</p>
+</div>
+<ContentContainer>
+	<div class="flex flex-col lg:flex-row gap-4 justify-between">
+		<div class="lg:w-1/2 mb-4">
+			<p class="p lg:text-xl">
+				The Herbarium Bernense contains about 500,000 herbarium specimens, including type specimens
+				and valuable historical collections. Currently about 10% of our collection is digitized and
+				can be accessed here.
+			</p>
+		</div>
+		<div class="lg:w-1/2">
 			<div class="flex justify-between">
 				<h3 class="h3 mb-3">Search and Filter</h3>
 				<SlideToggle
@@ -162,7 +157,7 @@
 	.image-background {
 		background-image: url('$lib/assets/P1044324.00_00_45_03.Still003.jpg');
 		background-size: cover;
-		background-position: center center;
+		background-position: center -200px;
 		background-attachment: fixed;
 		background-repeat: no-repeat;
 	}
