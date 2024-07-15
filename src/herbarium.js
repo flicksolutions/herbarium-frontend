@@ -19,16 +19,17 @@ export const herbarium = {
 		'--on-surface': '255 255 255',
 		// =~= Theme Colors  =~=
 		// primary | #4daa51
-		'--color-primary-50': '228 242 229', // #e4f2e5
-		'--color-primary-100': '219 238 220', // #dbeedc
-		'--color-primary-200': '211 234 212', // #d3ead4
-		'--color-primary-300': '184 221 185', // #b8ddb9
-		'--color-primary-400': '130 196 133', // #82c485
-		'--color-primary-500': '77 170 81', // #4daa51
-		'--color-primary-600': '69 153 73', // #459949
-		'--color-primary-700': '58 128 61', // #3a803d
-		'--color-primary-800': '46 102 49', // #2e6631
-		'--color-primary-900': '38 83 40', // #265328
+		'--color-primary-50': '232 235 224',
+		'--color-primary-100': '226 225 209',
+		'--color-primary-200': '204 209 184',
+		'--color-primary-300': '187 191 156',
+		'--color-primary-400': '186 186 148',
+		'--color-primary-500': '157 156 102',
+		'--color-primary-600': '131 134 86',
+		'--color-primary-700': '101 106 68',
+		'--color-primary-800': '75 81 52',
+		'--color-primary-900': '51 56 36',
+
 		// secondary | #192329
 		'--color-secondary-50': '221 222 223', // #dddedf
 		'--color-secondary-100': '209 211 212', // #d1d3d4
@@ -84,16 +85,16 @@ export const herbarium = {
 		'--color-error-700': '159 19 89', // #9f1359
 		'--color-error-800': '127 15 71', // #7f0f47
 		'--color-error-900': '104 12 58', // #680c3a
-		// surface | #495a8f
-		'--color-surface-50': '228 230 238', // #e4e6ee
-		'--color-surface-100': '219 222 233', // #dbdee9
-		'--color-surface-200': '210 214 227', // #d2d6e3
-		'--color-surface-300': '182 189 210', // #b6bdd2
-		'--color-surface-400': '128 140 177', // #808cb1
-		'--color-surface-500': '73 90 143', // #495a8f
-		'--color-surface-600': '66 81 129', // #425181
-		'--color-surface-700': '55 68 107', // #37446b
-		'--color-surface-800': '44 54 86', // #2c3656
-		'--color-surface-900': '36 44 70' // #242c46
+		// surface
+		'--color-surface-50': '243 237 230',
+		'--color-surface-100': '235 225 214',
+		'--color-surface-200': '220 203 183',
+		'--color-surface-300': '205 180 152',
+		'--color-surface-400': '189 155 117',
+		'--color-surface-500': '174 133 86',
+		'--color-surface-600': '145 110 70',
+		'--color-surface-700': '110 84 53',
+		'--color-surface-800': '79 60 38',
+		'--color-surface-900': '48 37 23'
 	}
 };

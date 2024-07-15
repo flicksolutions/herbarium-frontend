@@ -169,8 +169,8 @@
 			<i class="fa-solid fa-arrows-up-to-line"></i>
 		</button>
 	{/if}
-	<table class="table table-interactive">
-		<thead use:viewport={false}>
+	<table class="table table-interactive !bg-primary-100">
+		<thead use:viewport={false} class="!border-primary-800/20 !bg-primary-400">
 			<tr>
 				<th class="table-cell-fit">Scientific Name</th>
 				{#each structure as { key, label }}
@@ -182,7 +182,10 @@
 		</thead>
 		<tbody>
 			{#each visibleItems as row, i (row.materialEntityID)}
-				<tr use:viewport={i !== visibleItems.length - 1}>
+				<tr
+					class="!border-primary-800/20 even:!bg-primary-400/30"
+					use:viewport={i !== visibleItems.length - 1}
+				>
 					<td class="table-cell-fit italic">
 						<a href={`${base}/item/${row.materialEntityID}`}>
 							<i class="fa-solid fa-camera"></i>

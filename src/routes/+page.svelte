@@ -125,7 +125,7 @@
 			{#if !advancedToggle}
 				<label transition:slide>
 					<input
-						class="input text-primary-500 p-6 placeholder-primary-500"
+						class="input text-primary-800 p-6 placeholder-primary-800"
 						type="text"
 						placeholder="Searchinput..."
 						bind:value={searchtext}
@@ -138,7 +138,7 @@
 							{item.label}
 						</span>
 						<input
-							class="input text-primary-500 p-6 placeholder-primary-500"
+							class="input text-primary-800 p-6 placeholder-primary-800"
 							type="text"
 							bind:value={advancedFields[item.key]}
 						/>
