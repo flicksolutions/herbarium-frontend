@@ -138,7 +138,7 @@
 							{item.label}
 						</span>
 						<input
-							class="inputp-6 placeholder-primary-600"
+							class="input p-6 placeholder-primary-600"
 							type="text"
 							bind:value={advancedFields[item.key]}
 						/>
