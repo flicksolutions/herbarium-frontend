@@ -1,5 +1,5 @@
-export const addFlagToCountryCode = (/** @type {string} */ countryCode) => {
-	return `${countryCode} <span class="fi fi-${countryCode.toLowerCase()} ${countryCode.toLowerCase() === 'ch' ? 'fis' : ''}"></span>`;
+export const addFlagToCountry = (/** @type {string} */ country) => {
+	return `${country} <span class="fi fi-${country.toLowerCase()} ${country.toLowerCase() === 'ch' ? 'fis' : ''}"></span>`;
 };
 
 export const setGenusAndSpeciesItalic = (

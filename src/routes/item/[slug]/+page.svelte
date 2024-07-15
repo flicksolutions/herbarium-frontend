@@ -2,7 +2,7 @@
 	import ContentContainer from '$lib/components/ContentContainer.svelte';
 	import { onMount } from 'svelte';
 	import { assets } from '$app/paths';
-	import { addFlagToCountryCode, setGenusAndSpeciesItalic } from '$lib/functions';
+	import { addFlagToCountry, setGenusAndSpeciesItalic } from '$lib/functions';
 
 	/**
 	 * @type {import('openseadragon') | undefined}
@@ -81,7 +81,6 @@
 
 	/** @type {import('./$types').PageData} */
 	export let data;
-
 	$: {
 		if (viewer && data.iiif) {
 			viewer.open(data.iiif);
@@ -110,8 +109,8 @@
 							{label}
 						</dt>
 						<dd class="pl-2 pt-4">
-							{#if key === 'countryCode'}
-								{@html addFlagToCountryCode(metadataVal)}
+							{#if key === 'country'}
+								{@html addFlagToCountry(metadataVal)}
 							{:else if key === 'genus' || key === 'specificEpithet'}
 								<span class="italic">{metadataVal}</span>
 							{:else if key === 'acceptedNameUsage'}

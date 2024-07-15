@@ -1,6 +1,6 @@
 <script>
 	import { base } from '$app/paths';
-	import { addFlagToCountryCode, setGenusAndSpeciesItalic } from '$lib/functions';
+	import { addFlagToCountry, setGenusAndSpeciesItalic } from '$lib/functions';
 	import { blur, fly } from 'svelte/transition';
 	/**
 	 * @type {any[]}
@@ -111,7 +111,7 @@
 					if (items[0].hasOwnProperty('score')) {
 						sort('score', 'desc');
 					} else {
-						sort('catalogNumber', 'desc');
+						sort('materialEntityID', 'desc');
 					}
 				}
 			}
@@ -181,10 +181,10 @@
 			</tr>
 		</thead>
 		<tbody>
-			{#each visibleItems as row, i (row.catalogNumber)}
+			{#each visibleItems as row, i (row.materialEntityID)}
 				<tr use:viewport={i !== visibleItems.length - 1}>
 					<td class="table-cell-fit italic">
-						<a href={`${base}/item/${row.catalogNumber}`}>
+						<a href={`${base}/item/${row.materialEntityID}`}>
 							<i class="fa-solid fa-camera"></i>
 							{row.genus}
 							{row.specificEpithet}
@@ -192,14 +192,16 @@
 					</td>
 					{#each structure as { key }}
 						<td class="table-cell-fit">
-							{#if key === 'countryCode'}
-								{@html addFlagToCountryCode(row[key])}
-							{:else if key === 'genus' || key === 'specificEpithet'}
-								<span class="italic">{row[key]}</span>
-							{:else if key === 'acceptedNameUsage'}
-								{@html setGenusAndSpeciesItalic(row[key], row.genus, row.specificEpithet)}
-							{:else}
-								<a href={`${base}/item/${row.catalogNumber}`}>{row[key]}</a>
+							{#if row[key]}
+								{#if key === 'country'}
+									{@html addFlagToCountry(row[key])}
+								{:else if key === 'genus' || key === 'specificEpithet'}
+									<span class="italic">{row[key]}</span>
+								{:else if key === 'acceptedNameUsage'}
+									{@html setGenusAndSpeciesItalic(row[key], row.genus, row.specificEpithet)}
+								{:else}
+									<a href={`${base}/item/${row.materialEntityID}`}>{row[key]}</a>
+								{/if}
 							{/if}
 						</td>
 					{/each}

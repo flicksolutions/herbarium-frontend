@@ -6,7 +6,8 @@
 	{ "label": "Author", "key": "scientificNameAuthorship" },
 	{ "label": "Collector", "key": "recordedBy" },
 	{ "label": "Year", "key": "year" },
-	{ "label": "Country", "key": "countryCode" },
+	{ "label": "Country", "key": "country" },
+	{ "label": "State", "key": "stateProvince" },
 	{ "label": "Locality", "key": "locality" },
-	{ "label": "Catalog Number", "key": "catalogNumber" }
+	{ "label": "Catalog Number", "key": "materialEntityID" }
 ]
