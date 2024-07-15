@@ -90,9 +90,13 @@
 	}
 </script>
 
-<div class="image-background h-[30vh]">
-	<h1 class="h1 pt-16 px-16">Herbarium Bernense</h1>
-	<p class="px-16">Herbarium of the Botanical Garden of the University of Bern</p>
+<div class="px-8 pt-16 image-background h-[30vh]">
+	<div class="container mx-auto text-white backdrop-blur-md rounded w-fit p-2">
+		<h1 class="h1 font-bold tracking-wide drop-shadow-xl text-shadow">Herbarium Bernense</h1>
+		<p class="text-lg font-semibold text-shadow">
+			Herbarium of the Botanical Garden of the University of Bern
+		</p>
+	</div>
 </div>
 <ContentContainer>
 	<div class="flex flex-col lg:flex-row gap-4 justify-between">
@@ -159,5 +163,9 @@
 		background-position: center -200px;
 		background-attachment: fixed;
 		background-repeat: no-repeat;
+	}
+
+	.text-shadow {
+		text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 	}
 </style>
