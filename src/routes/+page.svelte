@@ -112,7 +112,7 @@
 				<h3 class="h3 mb-3">Search and Filter</h3>
 				<SlideToggle
 					name="advanced-mode"
-					active="bg-tertiary-600"
+					active="bg-surface-300"
 					bind:checked={advancedToggle}
 					class="mb-3"
 					on:change={() => {

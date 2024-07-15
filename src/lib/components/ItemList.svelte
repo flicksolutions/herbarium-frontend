@@ -156,7 +156,14 @@
 />
 
 <!-- Responsive Container (recommended) -->
-<div class="table-container" bind:this={table}>
+<div
+	class="table-container"
+	bind:this={table}
+	on:scroll={(e) => {
+		// @ts-ignore
+		helperScrollbar.scrollLeft = e.target.scrollLeft;
+	}}
+>
 	{#if showHelperElements}
 		<button
 			class="btn-icon variant-ghost-primary fixed top-24 right-6 z-50"
