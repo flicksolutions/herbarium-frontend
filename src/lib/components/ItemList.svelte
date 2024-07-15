@@ -188,7 +188,9 @@
 				>
 					<td class="table-cell-fit italic">
 						<a href={`${base}/item/${row.materialEntityID}`}>
-							<i class="fa-solid fa-camera"></i>
+							{#if row['ImageGUID']}
+								<i class="fa-solid fa-camera"></i>
+							{/if}
 							{row.genus}
 							{row.specificEpithet}
 						</a>
