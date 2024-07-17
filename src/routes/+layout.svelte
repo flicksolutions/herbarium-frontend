@@ -44,7 +44,8 @@
 
 	const pages = [
 		{ slug: 'Home', path: '/' },
-		{ slug: 'about us', path: '/about' }
+		{ slug: 'about us', path: '/about' },
+		{ slug: 'impressum', path: '/impressum' }
 	];
 </script>
 
@@ -109,17 +110,11 @@
 	<!-- Page Route Content -->
 	<slot />
 	<svelte:fragment slot="pageFooter">
-		<div class="grid grid-cols-2 md:!grid-cols-5 gap-1 lg:ml-10 lg:mr-10">
+		<div class="grid grid-cols-2 md:!grid-cols-5 lg:ml-10 lg:mr-10 gap-4">
 			<p class="h5 md:h6 lg:h5 col-span-2 justify-self-start">
 				A project of the Herbarium of the botanical garden of the University of Bern
 			</p>
-
-			<a
-				class="h5 anchor col-span-2 md:col-span-1 justify-self-start md:justify-self-end"
-				href="{base}/impressum"
-			>
-				Impressum
-			</a>
+			<p class="h5 md:h6 lg:h5 col-span-2 md:justify-self-end">Cover picture by Andrea Bordol</p>
 		</div>
 	</svelte:fragment>
 </AppShell>
