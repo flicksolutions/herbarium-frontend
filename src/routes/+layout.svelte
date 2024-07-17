@@ -7,17 +7,17 @@
 		getDrawerStore,
 		Drawer,
 		initializeStores,
-		Toast,
-		getToastStore,
-		localStorageStore
+		Toast
 	} from '@skeletonlabs/skeleton';
 	import '@fortawesome/fontawesome-free/css/solid.min.css';
 	import '@fortawesome/fontawesome-free/css/fontawesome.min.css';
 	import { base } from '$app/paths';
-	import { onMount } from 'svelte';
 	import { afterNavigate } from '$app/navigation';
 	import { computePosition, autoUpdate, offset, shift, flip, arrow } from '@floating-ui/dom';
 	import { storePopup } from '@skeletonlabs/skeleton';
+	import boga from '$lib/assets/BOGA-Logo_Black.svg';
+	import unibe from '$lib/assets/unibe.svg';
+
 	storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });
 
 	afterNavigate((/** @type import('@sveltejs/kit').AfterNavigate */ params) => {
@@ -30,9 +30,6 @@
 
 	initializeStores();
 	const drawerStore = getDrawerStore();
-	const toastStore = getToastStore();
-
-	const showWarning = localStorageStore('warning', true);
 
 	$: classesActive = (/** @type {string} */ href) =>
 		base + href === $page.url.pathname ? 'bg-primary-500' : '';
@@ -82,10 +79,30 @@
 					>
 				{/each}
 			</nav>
-			<svelte:fragment slot="trail">
+			<svelte:fragment slot="lead">
 				<button class="md:!hidden btn-icon" on:click={drawerOpen}>
 					<i class="fa-solid fa-bars"></i>
 				</button>
+			</svelte:fragment>
+			<svelte:fragment slot="trail">
+				<a href="https://www.unibe.ch" target="_blank" rel="noopener">
+					<img
+						src={unibe}
+						alt="Logo of the University of Bern"
+						class="max-h-[80px] h-[43px] w-auto my-1"
+					/>
+				</a>
+				<a
+					href="https://www.boga.unibe.ch/wissenschaft/herbarium/index_ger.html"
+					target="_blank"
+					rel="noopener"
+				>
+					<img
+						src={boga}
+						alt="Logo of the botanical garden"
+						class="max-h-[80px] h-[43px] w-auto my-1"
+					/>
+				</a>
 			</svelte:fragment>
 		</AppBar>
 	</svelte:fragment>
@@ -93,18 +110,6 @@
 	<slot />
 	<svelte:fragment slot="pageFooter">
 		<div class="grid grid-cols-2 md:!grid-cols-5 gap-1 lg:ml-10 lg:mr-10">
-			<a
-				href="https://www.boga.unibe.ch/wissenschaft/herbarium/index_ger.html"
-				target="_blank"
-				rel="noopener"
-			>
-				<enhanced:img
-					src="$lib/assets/BOGA.jpg"
-					alt="Logo of the botanical garden"
-					class="max-h-[80px]"
-				/>
-			</a>
-
 			<p class="h5 md:h6 lg:h5 col-span-2 justify-self-start">
 				A project of the Herbarium of the botanical garden of the University of Bern
 			</p>
