@@ -222,7 +222,10 @@
 
 <style>
 	.image-background {
-		background-image: url('$lib/assets/P1044324.00_00_45_03.Still003.jpg');
+		background-image: image-set(
+			url('$lib/assets/P1044324.00_00_45_03.Still003.jpg') type('image/jpg'),
+			url('$lib/assets/P1044324.00_00_45_03.Still003.webp') type('image/webp')
+		);
 		background-size: cover;
 		background-position: center -200px;
 		background-attachment: fixed;
