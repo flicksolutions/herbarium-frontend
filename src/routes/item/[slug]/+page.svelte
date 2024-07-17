@@ -1,7 +1,7 @@
 <script>
 	import ContentContainer from '$lib/components/ContentContainer.svelte';
 	import { onMount } from 'svelte';
-	import { assets } from '$app/paths';
+	import { assets, base } from '$app/paths';
 	import { addFlagToCountry, setGenusAndSpeciesItalic } from '$lib/functions';
 
 	/**
@@ -116,15 +116,17 @@
 							{label}
 						</dt>
 						<dd class="pl-2 pt-4">
-							{#if key === 'country'}
-								{@html addFlagToCountry(metadataVal)}
-							{:else if key === 'genus' || key === 'specificEpithet'}
-								<span class="italic">{metadataVal}</span>
-							{:else if key === 'acceptedNameUsage'}
-								{@html setGenusAndSpeciesItalic(metadataVal, d.genus, d.specificEpithet)}
-							{:else}
-								{metadataVal}
-							{/if}
+							<a href={`${base}/?a=${JSON.stringify({ [key]: metadataVal })}`}>
+								{#if key === 'country'}
+									{@html addFlagToCountry(metadataVal)}
+								{:else if key === 'genus' || key === 'specificEpithet'}
+									<span class="italic">{metadataVal}</span>
+								{:else if key === 'acceptedNameUsage'}
+									{@html setGenusAndSpeciesItalic(metadataVal, d.genus, d.specificEpithet)}
+								{:else}
+									{metadataVal}
+								{/if}
+							</a>
 						</dd>
 					{/if}
 				{/each}

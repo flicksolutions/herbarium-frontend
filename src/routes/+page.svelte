@@ -6,6 +6,7 @@
 	import { onMount } from 'svelte';
 	import { slide } from 'svelte/transition';
 	import { miniSearch } from '$lib/stores.js';
+	import { page } from '$app/stores';
 
 	export let data;
 
@@ -37,6 +38,22 @@
 			$miniSearch.addAll(data.items);
 		} else if (!$miniSearch.documentCount) {
 			$miniSearch.addAll(data.items);
+		}
+		if ($page.url.searchParams.get('s')) {
+			console.log('searchtext', $page.url.searchParams.get('s'));
+			// @ts-ignore
+			searchtext = $page.url.searchParams.get('s');
+			//remove search query from url
+			$page.url.searchParams.delete('s');
+			//set new url
+			history.replaceState(null, '', $page.url.toString());
+		} else if ($page.url.searchParams.get('a')) {
+			advancedToggle = true;
+			advancedFields = JSON.parse($page.url.searchParams.get('a'));
+			//remove search query from url
+			$page.url.searchParams.delete('a');
+			//set new url
+			history.replaceState(null, '', $page.url.toString());
 		}
 	});
 	const searchConfig = {
