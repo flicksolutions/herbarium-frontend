@@ -7,6 +7,7 @@
 	import { slide } from 'svelte/transition';
 	import { miniSearch } from '$lib/stores.js';
 	import { page } from '$app/stores';
+	import { afterNavigate } from '$app/navigation';
 
 	export let data;
 
@@ -22,6 +23,8 @@
 		}
 	};
 
+	let allDocumentsAdded = Promise.resolve();
+
 	onMount(() => {
 		if (!$miniSearch) {
 			const CUSTOM_SPACE_OR_PUNCT =
@@ -35,10 +38,24 @@
 					weights: { fuzzy: 0.3, prefix: 0.2 }
 				}
 			});
-			$miniSearch.addAll(data.items);
+			// $miniSearch.addAll(data.items);
+			allDocumentsAdded = new Promise((resolve) => {
+				$miniSearch.addAllAsync(data.items, { chunkSize: 12000 }).then(() => {
+					console.log('all documents added');
+					resolve();
+				});
+			});
 		} else if (!$miniSearch.documentCount) {
-			$miniSearch.addAll(data.items);
+			// $miniSearch.addAll(data.items);
+			allDocumentsAdded = new Promise((resolve) => {
+				$miniSearch.addAllAsync(data.items, { chunkSize: 12000 }).then(() => {
+					console.log('all documents added');
+					resolve();
+				});
+			});
 		}
+	});
+	afterNavigate(() => {
 		if ($page.url.searchParams.get('s')) {
 			console.log('searchtext', $page.url.searchParams.get('s'));
 			// @ts-ignore
@@ -49,6 +66,7 @@
 			history.replaceState(null, '', $page.url.toString());
 		} else if ($page.url.searchParams.get('a')) {
 			advancedToggle = true;
+			// @ts-ignore
 			advancedFields = JSON.parse($page.url.searchParams.get('a'));
 			//remove search query from url
 			$page.url.searchParams.delete('a');
@@ -56,6 +74,7 @@
 			history.replaceState(null, '', $page.url.toString());
 		}
 	});
+
 	const searchConfig = {
 		prefix: (/** @type {string} */ term) => term.length <= 6,
 		fuzzy: (
@@ -89,11 +108,17 @@
 	};
 
 	let filtereditems = data.items;
+	let searching = false;
 	$: {
 		if (searchtext) {
-			// filter all items for search results
-			asyncSearch(searchtext, searchConfig).then((results) => {
-				filtereditems = results;
+			//wait for all documents to be added to the index
+			searching = true;
+			allDocumentsAdded.then(() => {
+				// filter all items for search results
+				asyncSearch(searchtext, searchConfig).then((results) => {
+					filtereditems = results;
+					searching = false;
+				});
 			});
 		} else {
 			filtereditems = data.items;
@@ -184,7 +209,9 @@
 			{/if}
 
 			<p class="mt-5">
-				Found {filtereditems.length} Result{filtereditems.length >= 1 ? 's' : ''}.
+				Found {searching ? '...' : filtereditems.length} Result{filtereditems.length >= 1
+					? 's'
+					: ''}.
 			</p>
 		</div>
 	</div>

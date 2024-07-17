@@ -12,7 +12,8 @@
 	import '@fortawesome/fontawesome-free/css/solid.min.css';
 	import '@fortawesome/fontawesome-free/css/fontawesome.min.css';
 	import { base } from '$app/paths';
-	import { afterNavigate } from '$app/navigation';
+	import { afterNavigate, goto } from '$app/navigation';
+	import { onMount } from 'svelte';
 	import { computePosition, autoUpdate, offset, shift, flip, arrow } from '@floating-ui/dom';
 	import { storePopup } from '@skeletonlabs/skeleton';
 	import boga from '$lib/assets/BOGA-Logo_Black.svg';
@@ -47,6 +48,48 @@
 		{ slug: 'about us', path: '/about' },
 		{ slug: 'impressum', path: '/impressum' }
 	];
+	let searchtext = '';
+	let otherSearchisVisible = false;
+	/**
+	 * @type {IntersectionObserver}
+	 */
+	let observer;
+
+	onMount(() => {
+		const inputElements = document.querySelectorAll('main .input');
+
+		const options = {
+			root: null,
+			rootMargin: '0px',
+			threshold: 0.5
+		};
+
+		observer = new IntersectionObserver((entries) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					otherSearchisVisible = true;
+				} else {
+					otherSearchisVisible = false;
+				}
+			});
+		}, options);
+
+		inputElements.forEach((element) => {
+			observer.observe(element);
+		});
+	});
+
+	afterNavigate(() => {
+		otherSearchisVisible = false;
+		const inputElements = document.querySelectorAll('main .input');
+		if (observer) {
+			inputElements.forEach((element) => {
+				observer.observe(element);
+			});
+		} else {
+			console.log('observer not defined');
+		}
+	});
 </script>
 
 <Drawer height="h-auto">
@@ -79,6 +122,24 @@
 						>{page.slug}</a
 					>
 				{/each}
+				{#if !otherSearchisVisible}
+					<label>
+						<input
+							class="input placeholder-primary-600 ml-2"
+							type="text"
+							placeholder="Searchinput..."
+							bind:value={searchtext}
+							on:change={() => {
+								const to = searchtext;
+								searchtext = '';
+								goto(`${base}/?s=${to}`);
+							}}
+						/>
+					</label>
+					<a href={`${base}?s=${searchtext}`} class="btn-icon">
+						<i class="fa-solid fa-search"></i>
+					</a>
+				{/if}
 			</nav>
 			<svelte:fragment slot="lead">
 				<button class="md:!hidden btn-icon" on:click={drawerOpen}>
