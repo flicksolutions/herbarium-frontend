@@ -171,7 +171,7 @@
 		</div>
 		<div class="lg:w-1/2">
 			<div class="flex justify-between">
-				<h3 class="h3 mb-3">Search and Filter</h3>
+				<h2 class="h3 mb-3">Search and Filter</h2>
 				<SlideToggle
 					name="advanced-mode"
 					active="bg-surface-300"
