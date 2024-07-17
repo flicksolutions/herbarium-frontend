@@ -89,16 +89,23 @@
 </script>
 
 <ContentContainer>
-	<div class="md:grid md:grid-cols-2 md:grid-rows-[auto_1fr] gap-4 lg:gap-6">
+	<div class="grid md:grid-cols-2 md:grid-rows-[auto_1fr] gap-4 lg:gap-6">
 		{#if data.metadata}
 			{@const d = data.metadata}
 			<div class="md:col-span-2 lg:col-span-1 lg:col-start-2">
 				<h1 class="h1 text-balance pb-2 md:pb-4 inline italic">
 					{d.genus}
 					{d.specificEpithet}
+					{#if d.typeStatus !== 'no'}
+						<span class="badge variant-filled-warning"> {d.typeStatus}</span>
+					{/if}
 				</h1>
 			</div>
-			<div class="lg:row-span-2 lg:row-start-1 w-full h-fit bg-primary-900">
+			<div
+				class="lg:row-span-2 lg:row-start-1 w-full h-fit {d.typeStatus !== 'no'
+					? 'bg-warning-300'
+					: 'bg-primary-900'}"
+			>
 				<div id="viewer" class="w-full h-[60vh]"></div>
 			</div>
 			<dl class="grid grid-cols-[1fr_3fr] justify-between h-fit">
@@ -122,6 +129,10 @@
 					{/if}
 				{/each}
 			</dl>
+			<small>
+				The images of our herbarium specimens are published under the licence CC BY 4.0. Please cite
+				as: “by Herbarium Bernense / CC BY 4.0.”
+			</small>
 		{/if}
 	</div>
 </ContentContainer>
