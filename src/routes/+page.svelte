@@ -9,6 +9,18 @@
 
 	export let data;
 
+	/** @type {import('./$types').Snapshot<{searchtext: string | import('minisearch').Query, advancedToggle: boolean, advancedFields: { [key: string]: string; }}>} */
+	export const snapshot = {
+		capture: () => {
+			return { searchtext, advancedToggle, advancedFields };
+		},
+		restore: (value) => {
+			advancedFields = value.advancedFields;
+			searchtext = value.searchtext;
+			advancedToggle = value.advancedToggle;
+		}
+	};
+
 	onMount(() => {
 		if (!$miniSearch) {
 			const CUSTOM_SPACE_OR_PUNCT =
