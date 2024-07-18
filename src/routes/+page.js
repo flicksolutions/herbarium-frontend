@@ -24,7 +24,7 @@ export async function load() {
 
 	return {
 		categories: [...Object.keys(itemData[0]), 'ImageGUID'],
-		itemstructure: structure,
+		itemstructure: structure.filter((item) => item.showInList),
 		items: returnitems
 	};
 }

@@ -179,7 +179,7 @@
 	<table class="table table-interactive !bg-primary-100">
 		<thead use:viewport={false} class="!border-primary-800/20 !bg-primary-400">
 			<tr>
-				<th class="table-cell-fit">Scientific Name</th>
+				<th class="table-cell-fit">Label Name</th>
 				{#each structure as { key, label }}
 					<th class="hover:cursor-pointer table-cell-fit" on:click={(e) => handleSort(e, key)}>
 						{label} <i class="fa-solid pointer-events-none fa-sort"></i>

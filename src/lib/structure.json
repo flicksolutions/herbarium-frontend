@@ -1,13 +1,13 @@
 [
-	{ "label": "Accepted Name Usage", "key": "acceptedNameUsage" },
-	{ "label": "Family", "key": "family" },
-	{ "label": "Genus", "key": "genus" },
-	{ "label": "Species", "key": "specificEpithet" },
-	{ "label": "Author", "key": "scientificNameAuthorship" },
-	{ "label": "Collector", "key": "recordedBy" },
-	{ "label": "Year", "key": "year" },
-	{ "label": "Country", "key": "country" },
-	{ "label": "State", "key": "stateProvince" },
-	{ "label": "Locality", "key": "locality" },
-	{ "label": "Catalog Number", "key": "materialEntityID" }
+	{ "label": "Accepted Name", "key": "acceptedNameUsage", "showInList": true },
+	{ "label": "Family", "key": "family", "showInList": true },
+	{ "label": "Genus", "key": "genus", "showInList": false },
+	{ "label": "Species", "key": "specificEpithet", "showInList": false },
+	{ "label": "Author", "key": "scientificNameAuthorship", "showInList": false },
+	{ "label": "Collector", "key": "recordedBy", "showInList": true },
+	{ "label": "Year", "key": "year", "showInList": true },
+	{ "label": "Country", "key": "country", "showInList": true },
+	{ "label": "State", "key": "stateProvince", "showInList": true },
+	{ "label": "Locality", "key": "locality", "showInList": false },
+	{ "label": "Catalog Number", "key": "materialEntityID", "showInList": false }
 ]
