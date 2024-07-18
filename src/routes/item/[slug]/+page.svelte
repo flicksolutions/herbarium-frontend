@@ -116,7 +116,7 @@
 							{label}
 						</dt>
 						<dd class="pl-2 pt-4">
-							<a href={`${base}/?a=${JSON.stringify({ [key]: metadataVal })}`}>
+							<a class="anchor" href={`${base}/?a=${JSON.stringify({ [key]: metadataVal })}`}>
 								{#if key === 'country'}
 									{@html addFlagToCountry(metadataVal)}
 								{:else if key === 'genus' || key === 'specificEpithet'}
@@ -135,6 +135,11 @@
 				The images of our herbarium specimens are published under the licence CC BY 4.0. Please cite
 				as: “by Herbarium Bernense / CC BY 4.0.”
 			</small>
+			<p>
+				Found a mistake? Email us at <a class="anchor" href="mailto:info@boga.unibe.ch"
+					>info@boga.unibe.ch</a
+				>
+			</p>
 		{/if}
 	</div>
 </ContentContainer>
