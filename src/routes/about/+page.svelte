@@ -1,5 +1,22 @@
 <script>
 	import ContentContainer from '$lib/components/ContentContainer.svelte';
+	import stiftung from '$lib/assets/stiftung_boga.svg';
+	import bgb from '$lib/assets/BGB_Logo_Office_M.svg';
+	import aplus from '$lib/assets/a+_logo_SCNAT_DE_RGB.png';
+	import gvb from '$lib/assets/gvb.svg';
+	import uws from '$lib/assets/uws.svg';
+	import swisslos from '$lib/assets/swisslos.svg';
+	import fjd from '$lib/assets/fjd.svg';
+
+	const logos = [
+		{ src: stiftung, alt: 'Stiftung Boga' },
+		{ src: bgb, alt: 'Burgergemeinde Bern' },
+		{ src: aplus, alt: 'Swiss Academy of Sciences' },
+		{ src: gvb, alt: 'Gebäudeversicherung Bern' },
+		{ src: uws, alt: 'Ursula Wirz-Stiftung' },
+		{ src: swisslos, alt: 'Swisslos' },
+		{ src: fjd, alt: 'fondation johanna dürmüller-bol' }
+	];
 </script>
 
 <ContentContainer>
@@ -98,34 +115,9 @@
 		Reconditioning and digitization of the Herbarium Bernense are kindly funded by the following
 		institutions:
 	</p>
-	<div class="logo-cloud grid-cols-1 lg:!grid-cols-3 gap-1">
-		<a class="logo-item" href="/">
-			<span>(icon)</span>
-			<span>Skeleton</span>
-		</a>
-		<a class="logo-item" href="/">
-			<span>(icon)</span>
-			<span>Skeleton</span>
-		</a>
-		<a class="logo-item" href="/">
-			<span>(icon)</span>
-			<span>Skeleton</span>
-		</a>
-		<a class="logo-item" href="/">
-			<span>(icon)</span>
-			<span>Skeleton</span>
-		</a>
-		<a class="logo-item" href="/">
-			<span>(icon)</span>
-			<span>Skeleton</span>
-		</a>
-		<a class="logo-item" href="/">
-			<span>(icon)</span>
-			<span>Skeleton</span>
-		</a>
-		<a class="logo-item" href="/">
-			<span>(icon)</span>
-			<span>Skeleton</span>
-		</a>
+	<div class="logo-cloud grid-cols-1 lg:!grid-cols-3 gap-1 items-middle justify-items-center">
+		{#each logos as { src, alt }}
+			<img {src} {alt} width="180px" />
+		{/each}
 	</div>
 </ContentContainer>
