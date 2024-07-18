@@ -136,8 +136,10 @@
 				as: “by Herbarium Bernense / CC BY 4.0.”
 			</small>
 			<p>
-				Found a mistake? Email us at <a class="anchor" href="mailto:info@boga.unibe.ch"
-					>info@boga.unibe.ch</a
+				Found an error? Please contact <a
+					class="anchor"
+					href="mailto:katja.rembold@unibe.ch"
+					target="_blank">Katja Rembold</a
 				>
 			</p>
 		{/if}

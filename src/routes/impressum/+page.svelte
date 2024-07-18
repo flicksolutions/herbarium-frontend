@@ -27,11 +27,15 @@
 			<h2 class="h2">Contact</h2>
 			<p>
 				Dr. Katja Rembold (curator)<br />
-				<a class="anchor" href="mailto:katja.rembold@unibe.ch">katja.rembold@unibe.ch</a>
+				<a class="anchor" href="mailto:katja.rembold@unibe.ch" target="_blank"
+					>katja.rembold@unibe.ch</a
+				>
 			</p>
 			<p>
 				Rahel Vetsch (project coordinator)<br />
-				<a class="anchor" href="mailto:rahel.vetsch@unibe.ch">rahel.vetsch@unibe.ch</a>
+				<a class="anchor" href="mailto:rahel.vetsch@unibe.ch" target="_blank"
+					>rahel.vetsch@unibe.ch</a
+				>
 			</p>
 			<p>
 				Phone: <a class="anchor" href="tel:+41316844973">+41 31 684 49 73</a>
@@ -42,7 +46,8 @@
 			<p>
 				Herbarium Code: <a
 					class="anchor"
-					href="https://sweetgum.nybg.org/science/ih/herbarium-details/?irn=126603">BERN</a
+					href="https://sweetgum.nybg.org/science/ih/herbarium-details/?irn=126603"
+					target="_blank">BERN</a
 				>
 			</p>
 		</div>

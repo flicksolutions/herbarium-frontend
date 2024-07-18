@@ -34,7 +34,9 @@
 		<li>
 			Botanical illustrations: Botanical illustrations have the advantage that they can show natural
 			colours better than preserved specimens, such as the magnificent water colours of fungi by
-			<a class="anchor" href="http://www.botany.unibe.ch/gallery/otth.php">Gustav Otth</a> (1806-1874).
+			<a class="anchor" href="http://www.botany.unibe.ch/gallery/otth.php" target="_blank"
+				>Gustav Otth</a
+			> (1806-1874).
 		</li>
 		<li>
 			Photo collection: Besides slides and photographs, the Herbarium Bernense includes several
@@ -46,40 +48,49 @@
 	<p>
 		Since 2022, four projects are currently running to recondition and digitize the first 10% of the
 		Herbarium Bernense collection. These projects were made possible by the Swiss Network of Natural
-		History Collections (<a class="anchor" href="https://swisscollnet.scnat.ch/de">SwissCollNet</a
+		History Collections (<a class="anchor" href="https://swisscollnet.scnat.ch/de" target="_blank"
+			>SwissCollNet</a
 		>):
 	</p>
 	<ul class="list-disc list-inside">
 		<li>
 			"Efficient digitisation of herbarium specimens through the use of digitisation routes". In
-			collaboration with the <a class="anchor" href="http://www.naturama.ch/museum"
+			collaboration with the <a class="anchor" href="http://www.naturama.ch/museum" target="_blank"
 				>Naturama Aargau</a
 			>
 		</li>
 		<li>
 			"Historical Swiss alcohol collections of plants and fungi: rare and hidden treasures". In
-			collaboration with the <a class="anchor" href="https://www.botmuseum.uzh.ch/de.html"
-				>Botanical Museum of the University of Zurich</a
+			collaboration with the <a
+				class="anchor"
+				href="https://www.botmuseum.uzh.ch/de.html"
+				target="_blank">Botanical Museum of the University of Zurich</a
 			>
 		</li>
 		<li>
 			"Digitisation of the Fribourg (NHMF) and Bern (BERN) herbaria". In collaboration with the
-			<a class="anchor" href="https://www.fr.ch/de/nhmf">Natural History Museum of Fribourg</a> and
-			the Botanical Garden of the University of Fribourg,
-			<a class="anchor" href="https://www.unifr.ch/jardin-botanique/de/"
+			<a class="anchor" href="https://www.fr.ch/de/nhmf" target="_blank"
+				>Natural History Museum of Fribourg</a
+			>
+			and the Botanical Garden of the University of Fribourg,
+			<a class="anchor" href="https://www.unifr.ch/jardin-botanique/de/" target="_blank"
 				>Botanical Garden of the University of Fribourg</a
 			>
 		</li>
 		<li>
 			"Digitisation of the three-dimensional dry collection and associated herbarium specimens" In
-			collaboration with the <a class="anchor" href="https://www.botmuseum.uzh.ch/de.html"
-				>Botanical Museum of the University of Zurich</a
+			collaboration with the <a
+				class="anchor"
+				href="https://www.botmuseum.uzh.ch/de.html"
+				target="_blank">Botanical Museum of the University of Zurich</a
 			>, the
-			<a class="anchor" href="https://www.herbarien.uzh.ch/de.html"
+			<a class="anchor" href="https://www.herbarien.uzh.ch/de.html" target="_blank"
 				>Herbaria of the University and ETH Zurich</a
 			>
 			and the
-			<a class="anchor" href="https://stadt.winterthur.ch/naturmuseum">Naturmuseum Winterthur</a>
+			<a class="anchor" href="https://stadt.winterthur.ch/naturmuseum" target="_blank"
+				>Naturmuseum Winterthur</a
+			>
 		</li>
 	</ul>
 	<h2 class="h2">Funding</h2>
