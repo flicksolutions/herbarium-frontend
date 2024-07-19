@@ -1,5 +1,6 @@
 <script>
 	import ContentContainer from '$lib/components/ContentContainer.svelte';
+	import { openLightbox } from '$lib/functions';
 </script>
 
 <ContentContainer>
