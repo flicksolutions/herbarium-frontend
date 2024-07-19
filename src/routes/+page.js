@@ -7,7 +7,9 @@ export async function load() {
 		.map((item) => {
 			const obj = {};
 			for (const key in item) {
-				obj[key] = item[key];
+				if (key !== 'ImageGUID') {
+					obj[key] = item[key];
+				}
 			}
 			if (!obj.genus) {
 				obj.genus = 'no genus';
@@ -23,8 +25,8 @@ export async function load() {
 		});
 
 	return {
-		categories: [...Object.keys(itemData[0]), 'ImageGUID'],
-		itemstructure: structure.filter((item) => item.showInList),
+		categories: Object.keys(itemData[0]),
+		itemstructure: structure,
 		items: returnitems
 	};
 }

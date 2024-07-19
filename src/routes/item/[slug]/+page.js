@@ -9,11 +9,11 @@ export async function load({ params, fetch }) {
 		key: params.slug,
 		metadata: item,
 		iiif:
-			(await fetch(`https://iiif.ub.unibe.ch/image/v3/${item?.['ImageGUID']}/info.json`).then(
-				(res) => {
-					return res.ok ? res.json() : false;
-				}
-			)) ?? false,
+			(await fetch(
+				`https://iiif.ub.unibe.ch/image/v3/boga/${item?.['materialEntityID']}.tif/info.json`
+			).then((res) => {
+				return res.ok ? res.json() : false;
+			})) ?? false,
 		structure
 	};
 }

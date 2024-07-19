@@ -32,7 +32,7 @@
 			$miniSearch = new MiniSearch({
 				fields: data.categories, // fields to index for full-text search
 				storeFields: data.categories, // fields to return with search results
-				idField: data.categories[data.categories.length - 2], // document property to use as id field
+				idField: data.categories[data.categories.length - 1], // document property to use as id field
 				tokenize: (text) => text.split(CUSTOM_SPACE_OR_PUNCT),
 				searchOptions: {
 					weights: { fuzzy: 0.3, prefix: 0.2 }
@@ -217,7 +217,10 @@
 	</div>
 </ContentContainer>
 <section class="mx-4">
-	<ItemList structure={data.itemstructure} items={filtereditems} />
+	<ItemList
+		structure={data.itemstructure.filter((item) => item.showInList)}
+		items={filtereditems}
+	/>
 </section>
 
 <style>

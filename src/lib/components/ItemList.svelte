@@ -195,9 +195,7 @@
 				>
 					<td class="table-cell-fit italic">
 						<a href={`${base}/item/${row.materialEntityID}`}>
-							{#if row['ImageGUID']}
-								<i class="fa-solid fa-camera"></i>
-							{/if}
+							<i class="fa-solid fa-camera"></i>
 							{row.genus}
 							{row.specificEpithet}
 						</a>
@@ -205,15 +203,17 @@
 					{#each structure as { key }}
 						<td class="table-cell-fit">
 							{#if row[key]}
-								{#if key === 'country'}
-									{@html addFlagToCountry(row[key])}
-								{:else if key === 'genus' || key === 'specificEpithet'}
-									<span class="italic">{row[key]}</span>
-								{:else if key === 'acceptedNameUsage'}
-									{@html setGenusAndSpeciesItalic(row[key], row.genus, row.specificEpithet)}
-								{:else}
-									<a href={`${base}/item/${row.materialEntityID}`}>{row[key]}</a>
-								{/if}
+								<a href={`${base}/item/${row.materialEntityID}`}>
+									{#if key === 'country'}
+										{@html addFlagToCountry(row[key])}
+									{:else if key === 'genus' || key === 'specificEpithet'}
+										<span class="italic">{row[key]}</span>
+									{:else if key === 'acceptedNameUsage'}
+										{@html setGenusAndSpeciesItalic(row[key], row.genus, row.specificEpithet)}
+									{:else}
+										{row[key]}
+									{/if}
+								</a>
 							{/if}
 						</td>
 					{/each}
