@@ -189,7 +189,7 @@
 					<input
 						class="input p-6 placeholder-primary-600"
 						type="text"
-						placeholder="Searchinput..."
+						placeholder="searchinput..."
 						bind:value={searchtext}
 					/>
 				</label>

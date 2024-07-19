@@ -14,6 +14,20 @@
 				Switzerland
 			</p>
 		</div>
+		<enhanced:img
+			src="$lib/assets/IMG_8229.jpg"
+			alt="herbarium"
+			class="max-w-full border-8 border-primary-500 anchor cursor-pointer"
+			on:click={(e) => {
+				openLightbox(e.target);
+			}}
+			on:keypress={(e) => {
+				if (e.key === 'Enter' || e.key === ' ') {
+					openLightbox(e.target);
+				}
+			}}
+			role="presentation"
+		/>
 		<div>
 			<h2 class="h2">Postal Address</h2>
 			<p>
@@ -23,6 +37,20 @@
 				3012 Bern
 			</p>
 		</div>
+		<enhanced:img
+			src="$lib/assets/P1770528.jpg"
+			alt="herbarium"
+			class="max-w-full border-8 border-primary-500 anchor cursor-pointer"
+			on:click={(e) => {
+				openLightbox(e.target);
+			}}
+			on:keypress={(e) => {
+				if (e.key === 'Enter' || e.key === ' ') {
+					openLightbox(e.target);
+				}
+			}}
+			role="presentation"
+		/>
 		<div>
 			<h2 class="h2">Contact</h2>
 			<p>
@@ -41,6 +69,20 @@
 				Phone: <a class="anchor" href="tel:+41316844973">+41 31 684 49 73</a>
 			</p>
 		</div>
+		<enhanced:img
+			src="$lib/assets/P1006420.jpg"
+			alt="herbarium"
+			class="max-w-full border-8 border-primary-500 anchor cursor-pointer"
+			on:click={(e) => {
+				openLightbox(e.target);
+			}}
+			on:keypress={(e) => {
+				if (e.key === 'Enter' || e.key === ' ') {
+					openLightbox(e.target);
+				}
+			}}
+			role="presentation"
+		/>
 		<div>
 			<h2 class="h2">Index Herbariorum</h2>
 			<p>

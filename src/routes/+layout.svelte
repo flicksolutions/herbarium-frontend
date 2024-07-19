@@ -47,7 +47,7 @@
 	}
 
 	const pages = [
-		{ slug: 'Home', path: '/' },
+		{ slug: 'home', path: '/' },
 		{ slug: 'about us', path: '/about' },
 		{ slug: 'impressum', path: '/impressum' }
 	];
@@ -135,7 +135,7 @@
 						<input
 							class="input placeholder-primary-600 ml-2"
 							type="text"
-							placeholder="Searchinput..."
+							placeholder="searchinput..."
 							bind:value={searchtext}
 							on:change={() => {
 								const to = searchtext;
