@@ -1,6 +1,7 @@
 <script>
 	import { page } from '$app/stores';
 	import '../app.postcss';
+	import 'bigger-picture/css';
 	import {
 		AppShell,
 		AppBar,
@@ -18,6 +19,8 @@
 	import { storePopup } from '@skeletonlabs/skeleton';
 	import boga from '$lib/assets/BOGA-Logo_Black.svg';
 	import unibe from '$lib/assets/unibe.svg';
+	import { biggerPicture } from '$lib/stores';
+	import BiggerPicture from 'bigger-picture/svelte';
 
 	storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });
 
@@ -76,6 +79,11 @@
 
 		inputElements.forEach((element) => {
 			observer.observe(element);
+		});
+
+		// initialize lightbox
+		$biggerPicture = BiggerPicture({
+			target: document.body
 		});
 	});
 

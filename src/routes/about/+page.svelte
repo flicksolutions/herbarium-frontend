@@ -7,6 +7,7 @@
 	import uws from '$lib/assets/uws.svg';
 	import swisslos from '$lib/assets/swisslos.svg';
 	import fjd from '$lib/assets/fjd.svg';
+	import { openLightbox } from '$lib/functions';
 
 	const logos = [
 		{ src: stiftung, alt: 'Stiftung Boga' },
@@ -29,6 +30,20 @@
 		organisms.
 	</p>
 	<h2 class="h2">Collections of the Herbarium Bernense</h2>
+	<enhanced:img
+		src="$lib/assets/3E2A0219.jpg"
+		alt="herbarium"
+		class="max-w-96 float-left my-4 mr-4 border-8 border-primary-500 anchor cursor-pointer"
+		on:click={(e) => {
+			openLightbox(e.target);
+		}}
+		on:keypress={(e) => {
+			if (e.key === 'Enter' || e.key === ' ') {
+				openLightbox(e.target);
+			}
+		}}
+		role="presentation"
+	/>
 	<ul class="list-disc list-inside">
 		<li>
 			Herbarium specimens: The largest collection of the Herbarium Bernense are the herbarium
@@ -61,7 +76,22 @@
 			enjoyed a high reputation as a master of the photographic craft and as a gifted artist.
 		</li>
 	</ul>
+
 	<h2 class="h2">Reconditioning and digitization</h2>
+	<enhanced:img
+		src="$lib/assets/3E2A0231.jpg"
+		alt="herbarium"
+		class="max-w-96 float-right my-4 mr-4 border-8 border-primary-500 anchor cursor-pointer"
+		on:click={(e) => {
+			openLightbox(e.target);
+		}}
+		on:keypress={(e) => {
+			if (e.key === 'Enter' || e.key === ' ') {
+				openLightbox(e.target);
+			}
+		}}
+		role="presentation"
+	/>
 	<p>
 		Since 2022, four projects are currently running to recondition and digitize the first 10% of the
 		Herbarium Bernense collection. These projects were made possible by the Swiss Network of Natural
