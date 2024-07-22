@@ -33,7 +33,7 @@
 	<enhanced:img
 		src="$lib/assets/3E2A0219.jpg"
 		alt="herbarium"
-		class="max-w-full md:max-w-96 md:float-left mx-auto mt-4 md:my-4 md:mr-4 border-8 border-primary-500 anchor cursor-pointer"
+		class="max-w-full md:max-w-96 md:float-left mx-auto mt-4 md:my-4 md:mr-6 border-8 border-primary-500 anchor cursor-pointer"
 		on:click={(e) => {
 			openLightbox(e.target);
 		}}
@@ -44,7 +44,7 @@
 		}}
 		role="presentation"
 	/>
-	<ul class="list-disc list-inside">
+	<ul class="list-disc list-inside *:-indent-4 *:ml-4">
 		<li>
 			Herbarium specimens: The largest collection of the Herbarium Bernense are the herbarium
 			specimens, pressed and mounted on herbarium sheets. The oldest of the estimated 500,000
@@ -81,7 +81,7 @@
 	<enhanced:img
 		src="$lib/assets/3E2A0231.jpg"
 		alt="herbarium"
-		class="max-w-full md:max-w-96 md:float-right mx-auto mt-4 md:my-4 md:mr-4 border-8 border-primary-500 anchor cursor-pointer"
+		class="max-w-full md:max-w-96 md:float-right mx-auto mt-4 md:my-4 md:ml-6 border-8 border-primary-500 anchor cursor-pointer"
 		on:click={(e) => {
 			openLightbox(e.target);
 		}}
@@ -99,7 +99,7 @@
 			>SwissCollNet</a
 		>):
 	</p>
-	<ul class="list-disc list-inside">
+	<ul class="list-disc list-inside *:-indent-4 *:ml-4">
 		<li>
 			"Efficient digitisation of herbarium specimens through the use of digitisation routes". In
 			collaboration with the <a class="anchor" href="http://www.naturama.ch/museum" target="_blank"
@@ -145,7 +145,9 @@
 		Reconditioning and digitization of the Herbarium Bernense are kindly funded by the following
 		institutions:
 	</p>
-	<div class="logo-cloud grid-cols-1 lg:!grid-cols-3 gap-1 items-middle justify-items-center">
+	<div
+		class="logo-cloud grid-cols-1 md:!grid-cols-3 sm:!grid-cols-2 gap-1 items-middle justify-items-center"
+	>
 		{#each logos as { src, alt }}
 			<img {src} {alt} width="180px" />
 		{/each}
