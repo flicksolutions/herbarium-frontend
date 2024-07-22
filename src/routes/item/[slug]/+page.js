@@ -17,3 +17,10 @@ export async function load({ params, fetch }) {
 		structure
 	};
 }
+
+/** @type {import('./$types').EntryGenerator} */
+export function entries() {
+	return itemData.map((item) => {
+		return { slug: item.materialEntityID.replace('/', '') };
+	});
+}
