@@ -88,6 +88,10 @@
 	}
 </script>
 
+<svelte:head>
+	<link rel="preconnect" href="https://iiif.ub.unibe.ch" />
+</svelte:head>
+
 <ContentContainer>
 	<div class="grid md:grid-cols-2 md:grid-rows-[auto_1fr] gap-4 lg:gap-6">
 		{#if data.metadata}
