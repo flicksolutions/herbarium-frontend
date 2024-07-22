@@ -25,7 +25,7 @@
 	storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });
 
 	afterNavigate((/** @type import('@sveltejs/kit').AfterNavigate */ params) => {
-		const isNewPage = params.from?.url.pathname !== params.to?.url.pathname;
+		const isNewPage = params.from?.url?.pathname !== params.to?.url?.pathname;
 		const elemPage = document.querySelector('#page');
 		if (isNewPage && elemPage !== null) {
 			elemPage.scrollTop = 0;
@@ -36,7 +36,7 @@
 	const drawerStore = getDrawerStore();
 
 	$: classesActive = (/** @type {string} */ href) =>
-		base + href === $page.url.pathname ? 'bg-primary-500' : '';
+		base + href === $page?.url?.pathname ? 'bg-primary-500' : '';
 
 	function drawerOpen() {
 		const /** @type {import('@skeletonlabs/skeleton').DrawerSettings} */ s = {
