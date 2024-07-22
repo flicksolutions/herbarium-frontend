@@ -33,7 +33,7 @@
 	<enhanced:img
 		src="$lib/assets/3E2A0219.jpg"
 		alt="herbarium"
-		class="max-w-96 float-left my-4 mr-4 border-8 border-primary-500 anchor cursor-pointer"
+		class="max-w-full md:max-w-96 md:float-left mx-auto mt-4 md:my-4 md:mr-4 border-8 border-primary-500 anchor cursor-pointer"
 		on:click={(e) => {
 			openLightbox(e.target);
 		}}
@@ -81,7 +81,7 @@
 	<enhanced:img
 		src="$lib/assets/3E2A0231.jpg"
 		alt="herbarium"
-		class="max-w-96 float-right my-4 mr-4 border-8 border-primary-500 anchor cursor-pointer"
+		class="max-w-full md:max-w-96 md:float-right mx-auto mt-4 md:my-4 md:mr-4 border-8 border-primary-500 anchor cursor-pointer"
 		on:click={(e) => {
 			openLightbox(e.target);
 		}}
