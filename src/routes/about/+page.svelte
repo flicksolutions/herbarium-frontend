@@ -46,33 +46,33 @@
 	/>
 	<ul class="list-disc list-inside *:-indent-4 *:ml-4">
 		<li>
-			Herbarium specimens: The largest collection of the Herbarium Bernense are the herbarium
-			specimens, pressed and mounted on herbarium sheets. The oldest of the estimated 500,000
+			<strong>Herbarium specimens:</strong> The largest collection of the Herbarium Bernense are the
+			herbarium specimens, pressed and mounted on herbarium sheets. The oldest of the estimated 500,000
 			specimens dates back to the year 1753.
 		</li>
 		<li>
-			Wet collection: The wet collection, preserved in an 75% ethanol solution, is probably the
-			largest historical wet collection of plants and fungi in Switzerland and comprises 1,142
-			specimens.
+			<strong>Wet collection:</strong> The wet collection, preserved in an 75% ethanol solution, is probably
+			the largest historical wet collection of plants and fungi in Switzerland and comprises 1,142 specimens.
 		</li>
 		<li>
-			Dry bulk collection: This collection comprises about 3000 specimens of seeds, woody fruits,
-			tree cross sections and fungi fruit bodies.
+			<strong>Dry bulk collection:</strong> This collection comprises about 3000 specimens of seeds,
+			woody fruits, tree cross sections and fungi fruit bodies.
 		</li>
 		<li>
-			Fossil collection: About 3000 specimens of fossilized plants and archaeological finds (e.g.
-			fossilised grains from prehistoric pile dwellings) are contained in this collection.
+			<strong>Fossil collection:</strong> About 3000 specimens of fossilized plants and archaeological
+			finds (e.g. fossilised grains from prehistoric pile dwellings) are contained in this collection.
 		</li>
 		<li>
-			Botanical illustrations: Botanical illustrations have the advantage that they can show natural
-			colours better than preserved specimens, such as the magnificent water colours of fungi by
+			<strong>Botanical illustrations:</strong> Botanical illustrations have the advantage that they
+			can show natural colours better than preserved specimens, such as the magnificent water
+			colours of fungi by
 			<a class="anchor" href="http://www.botany.unibe.ch/gallery/otth.php" target="_blank"
 				>Gustav Otth</a
 			> (1806-1874).
 		</li>
 		<li>
-			Photo collection: Besides slides and photographs, the Herbarium Bernense includes several
-			artistically hand-coloured glass plates, including those by Josef Hanel (1865-1940). He
+			<strong>Photo collection:</strong> Besides slides and photographs, the Herbarium Bernense includes
+			several artistically hand-coloured glass plates, including those by Josef Hanel (1865-1940). He
 			enjoyed a high reputation as a master of the photographic craft and as a gifted artist.
 		</li>
 	</ul>
