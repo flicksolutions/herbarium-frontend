@@ -98,8 +98,13 @@
 			{@const d = data.metadata}
 			<div class="md:col-span-2 lg:col-span-1 lg:col-start-2">
 				<h1 class="h1 text-balance pb-2 md:pb-4 inline italic">
-					{d.genus}
-					{d.specificEpithet}
+					{#if d.genus.trim() || d.specificEpithet.trim()}
+						{d.genus}
+						{d.specificEpithet}
+					{:else}
+						{d.acceptedNameUsage}
+					{/if}
+
 					{#if d.typeStatus !== 'no'}
 						<span class="badge variant-filled-warning"> {d.typeStatus}</span>
 					{/if}
