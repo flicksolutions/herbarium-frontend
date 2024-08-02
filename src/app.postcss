@@ -1,4 +1,3 @@
-@import '/node_modules/flag-icons/css/flag-icons.min.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -23,5 +22,12 @@ body {
 
 	section .container:not(.grid) {
 		@apply space-y-4;
+	}
+
+	.flag{
+		@apply inline-block relative bg-contain bg-center bg-no-repeat w-4 leading-4;
+		&:before {
+			content: " ";
+		}
 	}
 }

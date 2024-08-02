@@ -2,7 +2,7 @@ import { get } from 'svelte/store';
 import { biggerPicture } from './stores';
 
 export const addFlagToCountry = (/** @type {string} */ country) => {
-	return `${country} <span class="fi fi-${country.toLowerCase()} ${country.toLowerCase() === 'ch' ? 'fis' : ''}"></span>`;
+	return `${country} <span style="background-image: url(https://github.com/stefangabos/world_countries/blob/master/data/flags/16x16/${country.toLowerCase()}.png?raw=true);" class="flag"></span>`;
 };
 
 export const setGenusAndSpeciesItalic = (
