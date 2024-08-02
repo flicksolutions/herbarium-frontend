@@ -171,6 +171,8 @@
 						src={boga}
 						alt="Logo of the botanical garden"
 						class="max-h-[80px] h-[43px] w-auto my-1"
+						height="43"
+						width="72"
 					/>
 				</a>
 			</svelte:fragment>
