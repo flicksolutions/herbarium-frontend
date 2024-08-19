@@ -43,7 +43,7 @@
     "@types/openseadragon": "^3.0.10",
     "bigger-picture": "^1.1.17",
     "minisearch": "^7.0.0",
-    "openseadragon": "^4.1.0",
+    "openseadragon": "^5.0.0",
     "sander": "^0.6.0"
   }
 }
