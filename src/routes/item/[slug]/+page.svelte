@@ -19,6 +19,7 @@
 		viewer = new OpenSeadragon.Viewer({
 			id: 'viewer',
 			prefixUrl: `${assets}/openseadragon-svg-icons/icons/`,
+			showNavigator: true,
 			navImages: {
 				zoomIn: {
 					REST: 'zoomin_rest.svg',
