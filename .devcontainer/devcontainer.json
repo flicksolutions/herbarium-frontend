@@ -1,4 +1,12 @@
 {
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
-  "postCreateCommand": "npm install && npm run dev"
+  "postCreateCommand": "npm install && npm run dev",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "svelte.svelte-vscode",
+        "rvest.vs-code-prettier-eslint"
+      ]
+    }
+  }
 }
