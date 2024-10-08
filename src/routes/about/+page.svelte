@@ -152,4 +152,18 @@
 			<img {src} {alt} width="180px" />
 		{/each}
 	</div>
+
+<h2 class="h2">Technical implementation</h2>
+<p>
+	The images for the website are made available via the International Image Interoperability Framework (IIIF), 
+	see https://iiif.io/. We use the IIIF service of the University Library Bern for this purpose, 
+	see https://bib.unibe.ch/iiif
+</p>
+<div
+	class="logo-cloud grid-cols-1 md:!grid-cols-3 sm:!grid-cols-2 gap-1 items-middle justify-items-center"
+>
+	{#each logos as { src, alt }}
+		<img {src} {alt} width="180px" />
+	{/each}
+</div>
 </ContentContainer>
