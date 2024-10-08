@@ -166,8 +166,8 @@
 <div
 	class="logo-cloud grid-cols-1 md:!grid-cols-3 sm:!grid-cols-2 gap-1 items-middle justify-items-center"
 >
-	{#each logos as { src, alt }}
-		<img {src} {alt} width="180px" />
-	{/each}
+
+		<img src="$lib/assets/International_Image_Interoperability_Framework_logo.png" width="180px" />
+
 </div>
 </ContentContainer>
