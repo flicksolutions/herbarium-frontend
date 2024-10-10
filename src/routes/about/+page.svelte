@@ -166,20 +166,16 @@
 		>.
 	</p>
 	<p>
-		The images for the website are made available via the International Image Interoperability
-		Framework (IIIF), see <a class="anchor" href="https://iiif.io/" target="_blank"
-			>https://iiif.io/</a
-		>. We use the IIIF service of the University Library Bern for this purpose, see
+		<enhanced:img
+			src="$lib/assets/International_Image_Interoperability_Framework_logo.png"
+			width="180px"
+			class="float-right"
+		/>
+		The images for the website are made available via the International Image Interoperability Framework
+		(IIIF), see <a class="anchor" href="https://iiif.io/" target="_blank">https://iiif.io/</a>. We
+		use the IIIF service of the University Library Bern for this purpose, see
 		<a class="anchor" href="hhttps://bib.unibe.ch/iiif" target="_blank">https://bib.unibe.ch/iiif</a
 		>
 	</p>
 	<p>Cover picture by Andrea Bordoli</p>
-	<div
-		class="logo-cloud grid-cols-1 md:!grid-cols-3 sm:!grid-cols-2 gap-1 items-middle justify-items-center"
-	>
-		<enhanced:img
-			src="$lib/assets/International_Image_Interoperability_Framework_logo.png"
-			width="180px"
-		/>
-	</div>
 </ContentContainer>
