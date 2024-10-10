@@ -182,11 +182,10 @@
 	<!-- Page Route Content -->
 	<slot />
 	<svelte:fragment slot="pageFooter">
-		<div class="grid grid-cols-2 md:!grid-cols-4 lg:ml-10 lg:mr-10 gap-4">
+		<div class="grid grid-cols-2 lg:ml-10 lg:mr-10 gap-4">
 			<p class="h5 md:h6 lg:h5 col-span-2 justify-self-start">
 				A project of the Herbarium of the Botanical Garden of the University of Bern
 			</p>
-			<p class="h5 md:h6 lg:h5 col-span-2 md:justify-self-end">Cover picture by Andrea Bordoli</p>
 		</div>
 	</svelte:fragment>
 </AppShell>

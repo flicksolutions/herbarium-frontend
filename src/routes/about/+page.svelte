@@ -155,6 +155,17 @@
 
 	<h2 class="h2">Technical implementation</h2>
 	<p>
+		This website is a purely static build with a client-side search component. It is hosted by
+		Github and was developed by Sebastian Flick and Peter Dängeli of the <a
+			href="https://www.dsl.unibe.ch/"
+			class="anchor">Data Science Lab</a
+		>
+		using Svelte and Svelte-Kit. For more technical information, see our
+		<a href="https://github.com/DHBern/herbarium-frontend" target="_blank" class="anchor"
+			>Github repository</a
+		>.
+	</p>
+	<p>
 		The images for the website are made available via the International Image Interoperability
 		Framework (IIIF), see <a class="anchor" href="https://iiif.io/" target="_blank"
 			>https://iiif.io/</a
@@ -162,6 +173,7 @@
 		<a class="anchor" href="hhttps://bib.unibe.ch/iiif" target="_blank">https://bib.unibe.ch/iiif</a
 		>
 	</p>
+	<p>Cover picture by Andrea Bordoli</p>
 	<div
 		class="logo-cloud grid-cols-1 md:!grid-cols-3 sm:!grid-cols-2 gap-1 items-middle justify-items-center"
 	>
