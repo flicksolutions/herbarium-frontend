@@ -35,7 +35,8 @@
 				idField: data.categories[data.categories.length - 1], // document property to use as id field
 				tokenize: (text) => text.split(CUSTOM_SPACE_OR_PUNCT),
 				searchOptions: {
-					weights: { fuzzy: 0.3, prefix: 0.2 }
+					fuzzy: false,
+					prefix: true
 				}
 			});
 			// $miniSearch.addAll(data.items);
@@ -75,20 +76,6 @@
 		}
 	});
 
-	const searchConfig = {
-		prefix: (/** @type {string} */ term) => term.length <= 6,
-		fuzzy: (
-			/** @type {string} */ term,
-			/** @type {Number} */ _i,
-			/** @type {string[]}*/ _terms
-		) => {
-			if (/\d{4}/.test(term)) {
-				return false;
-			}
-			return 0.2;
-		}
-	};
-
 	/**
 	 * @type {string|import('minisearch').Query}
 	 */
@@ -115,7 +102,7 @@
 			searching = true;
 			allDocumentsAdded.then(() => {
 				// filter all items for search results
-				asyncSearch(searchtext, searchConfig).then((results) => {
+				asyncSearch(searchtext).then((results) => {
 					filtereditems = results;
 					searching = false;
 				});
