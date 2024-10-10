@@ -8,5 +8,8 @@
         "rvest.vs-code-prettier-eslint"
       ]
     }
+  },
+  "features": {
+    "ghcr.io/devcontainers-community/npm-features/prettier:1": {}
   }
 }
