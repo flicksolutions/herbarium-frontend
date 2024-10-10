@@ -48,6 +48,7 @@
 
 	const pages = [
 		{ slug: 'home', path: '/' },
+		{ slug: 'illustrations', path: '/illustrations' },
 		{ slug: 'about us', path: '/about' },
 		{ slug: 'impressum', path: '/impressum' }
 	];
