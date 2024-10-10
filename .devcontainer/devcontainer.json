@@ -1,5 +1,5 @@
 {
-  "image": "mcr.microsoft.com/devcontainers/javascript-node:0-22",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node",
   "customizations": {
     "vscode": {
       "extensions": [
@@ -7,12 +7,14 @@
       ]
     }
   },
-  "forwardPorts": [5173],
+  "forwardPorts": [
+    5173
+  ],
   "portsAttributes": {
     "5173": {
       "label": "Application",
       "onAutoForward": "openBrowser"
     }
   },
-  "postCreateCommand": "npm ci && npm run dev -- --open"
+  "postCreateCommand": "npm install && npm run dev"
 }
