@@ -3,13 +3,13 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "svelte.svelte-vscode",
-        "rvest.vs-code-prettier-eslint"
+        "svelte.svelte-vscode"
       ]
     }
   },
   "features": {
     "ghcr.io/devcontainers-community/npm-features/prettier:1": {}
   },
-  "forwardPorts": [5173]
+  "forwardPorts": [5000],
+  "postCreateCommand": "npm install && npm run dev -- --open",
 }
