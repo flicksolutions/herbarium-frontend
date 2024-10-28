@@ -150,7 +150,7 @@
 		1914, 136-167
 	</a>.
 	<enhanced:img
-		src="$lib/assets/Studer-Steinhäuslin.tif"
+		src="$lib/assets/Studer-Steinhäuslin.jpg"
 		alt="Cortinarius traganus"
 		class="max-w-full md:max-w-96 md:float-left mx-auto mt-4 md:my-4 md:mr-6 border-8 border-primary-500 anchor cursor-pointer"
 		on:click={(e) => {
