@@ -16,7 +16,7 @@
 	import pdf13 from '$lib/assets/13_Otth_IconesFungorum_Ustilagineen+Phykomyceten+Myxomyceten.pdf';
 </script>
 
-<ContentContainer>
+<ContentContainer class="styled">
 	<p>
 		The Herbarium Bernense also comprises a collection of beautiful scientific illustrations of
 		plants, fungi and algae. Compared to herbarium specimens, botanical illustrations have the
@@ -133,10 +133,8 @@
 	a book on edible mushrooms, held public mushroom courses and founded a mushroom inspection centre in
 	Bern to promote edible mushrooms and dispel prejudices. The author abbreviation of Bernhard Studer-Steinhäuslin
 	is Stud.-Steinh. (Clitocybe aurantiaca, Pourretia mexicana var. argentea). His numerous publications
-	are listed in the obituary:<a
-		href="https://www.e-periodica.ch/cntmng?pid=sng-005%3A1910%3A93%3A%3A905"
-		target="_blank"
-	>
+	are listed in the obituary:
+	<a href="https://www.e-periodica.ch/cntmng?pid=sng-005%3A1910%3A93%3A%3A905" target="_blank">
 		A. Tschirch: Bernhard Studer-Steinhäuslin, Apotheker in Verhandlungen der Schweizerischen
 		Naturforschenden Gesellschaft, 93, 1910, S. 36-42
 	</a>.
