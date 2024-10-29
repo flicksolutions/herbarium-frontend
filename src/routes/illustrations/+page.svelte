@@ -14,6 +14,8 @@
 	import pdf11 from '$lib/assets/11_Otth_IconesFungorum_Tubericineen+Pyrenomyceten.pdf';
 	import pdf12 from '$lib/assets/12_Otth_IconesFungorum_Imperfecti.pdf';
 	import pdf13 from '$lib/assets/13_Otth_IconesFungorum_Ustilagineen+Phykomyceten+Myxomyceten.pdf';
+	import pdf14 from '$lib/assets/01_Otth_IconesFungorum_Agaricineen.pdf';
+	import pdf15 from '$lib/assets/02a_Studer_IconesFungorum_172-329.pdf';
 </script>
 
 <ContentContainer class="styled">
@@ -59,7 +61,7 @@
 	/>
 	<ul class="list-disc list-inside *:-indent-4 *:ml-4">
 		<li>
-			<a class="anchor" href={pdf1} target="_blank">Otth - Icones Fungorum I (Nr. 1 - 111)</a> - Hymenoceten,
+			<a class="anchor" href={pdf14} target="_blank">Otth - Icones Fungorum I (Nr. 1 - 111)</a> - Hymenoceten,
 			Agaricineen, Agaricus, Leucosporus 1 - ordered according to Fries: Hymenomycetes europaei, 1874
 		</li>
 		<li>
