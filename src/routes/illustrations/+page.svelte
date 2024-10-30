@@ -14,8 +14,7 @@
 	import pdf11 from '$lib/assets/11_Otth_IconesFungorum_Tubericineen+Pyrenomyceten.pdf';
 	import pdf12 from '$lib/assets/12_Otth_IconesFungorum_Imperfecti.pdf';
 	import pdf13 from '$lib/assets/13_Otth_IconesFungorum_Ustilagineen+Phykomyceten+Myxomyceten.pdf';
-	import pdf14 from '$lib/assets/01_Otth_IconesFungorum_Agaricineen.pdf';
-	import pdf15 from '$lib/assets/02a_Studer_IconesFungorum_172-329.pdf';
+	import pdf14 from '$lib/assets/01_Otth_IconesFungorum_Agaricineen.pdf';	
 </script>
 
 <ContentContainer class="styled">
@@ -32,7 +31,7 @@
 	<h1 class="h1">Gustav Otth</h1>
 	Gustav Heinrich Otth (02.06.1806 – 08.11.1874) was a Swiss mycologist and military officer. He described
 	several new fungi species and the genus Pucciniastrum within the family Pucciniastraceae. Detailed
-	information about the life and works of Gustav Otth can be found in Eduard Fischer:<a
+	information about the life and works of Gustav Otth can be found in Eduard Fischer: <a
 		href="https://boris.unibe.ch/159775/1/1909_E.Fischer.pdf"
 		target="_blank"
 	>
