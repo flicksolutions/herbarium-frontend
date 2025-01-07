@@ -1,6 +1,6 @@
 # Herbarium
 
-This website is a purely static build with a client-side search component. It is hosted by Github and was developed by [Sebastian Flick](https://github.com/flicksolutions) and [Peter Dängeli](https://github.com/pdaengeli) of the [Data Science Lab](https://github.com/dsl-unibe-ch) using Svelte and Svelte-Kit.
+This website is a purely static build with a client-side search component. It is hosted by Github and was developed by [Sebastian Flick](https://github.com/flicksolutions) and [Peter Dängeli](https://github.com/pdaengeli) of the [Data Science Lab](https://github.com/dsl-unibe-ch) using Svelte and Svelte-Kit. test
 
 All the metadata for the herbarium is contained in this JSON: [src/lib/data.json](https://github.com/DHBern/herbarium-frontend/blob/main/src/lib/data.json)
 
